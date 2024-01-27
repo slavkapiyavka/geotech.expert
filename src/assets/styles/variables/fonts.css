@@ -1,0 +1,258 @@
+:root {
+    /* Fonts */
+    --font-bebas-neue: 'Bebas Neue', sans-serif;
+    --font-nevermind-compact: 'Nevermind compact', sans-serif;
+
+    /* Font weight */
+    --regular-font-weight: 400;
+
+    /* H1 */
+    --font-h1-size: 60px;
+    --font-h1-line-height: 100%;
+    --font-h1-letter-spacing: 2%;
+
+    /* H2 */
+    --font-h2-size: 40px;
+    --font-h2-line-height: 100%;
+    --font-h2-letter-spacing: 2%;
+
+    /* H3 */
+    --font-h3-size: 32px;
+    --font-h3-line-height: 110%;
+    --font-h3-letter-spacing: 2%;
+
+    /* H4 */
+    --font-h4-size: 28px;
+    --font-h4-line-height: 100%;
+    --font-h4-letter-spacing: 1%;
+
+    /* H5 */
+    --font-h5-size: 18px;
+    --font-h5-line-height: 120%;
+    --font-h5-letter-spacing: 0;
+
+    /* H6 */
+    --font-h6-size: 18px;
+    --font-h6-line-height: 120%;
+    --font-h6-letter-spacing: 0;
+
+    /* Buttons */
+    --font-button1-size: 16px;
+    --font-button1-line-height: 100%;
+    --font-button1-letter-spacing: 0;
+
+    --font-button2-size: 16px;
+    --font-button2-line-height: 100%;
+    --font-button2-letter-spacing: 0;
+
+    /* Text */
+    --font-text1-size: 14px;
+    --font-text1-line-height: 130%;
+    --font-text1-letter-spacing: 0;
+
+    --font-text2-size: 12px;
+    --font-text2-line-height: 140%;
+    --font-text2-letter-spacing: 0;
+
+    --font-menu-size: 30px;
+    --font-menu-line-height: 120%;
+    --font-menu-letter-spacing: 0;
+
+    /* Breadcrumbs */
+    --font-breadcrumbs-size: 12px;
+    --font-breadcrumbs-line-height: 110%;
+    --font-breadcrumbs-letter-spacing: 0;
+
+    /* Tag */
+    --font-tag-size: 14px;
+    --font-tag-line-height: 120%;
+    --font-tag-letter-spacing: 0;
+}
+
+h1,
+.heading-first {
+    margin: 0;
+    font-family: var(--font-bebas-neue);
+    font-size: var(--font-h1-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-h1-line-height);
+    letter-spacing: var(--font-h1-letter-spacing);
+}
+
+h2,
+.heading-second {
+    margin: 0;
+    font-family: var(--font-bebas-neue);
+    font-size: var(--font-h2-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-h2-line-height);
+    letter-spacing: var(--font-h2-letter-spacing);
+}
+
+h3,
+.heading-third {
+    margin: 0;
+    font-family: var(--font-bebas-neue);
+    font-size: var(--font-h3-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-h3-line-height);
+    letter-spacing: var(--font-h3-letter-spacing);
+}
+
+h4,
+.heading-fourth {
+    margin: 0;
+    font-family: var(--font-bebas-neue);
+    font-size: var(--font-h4-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-h4-line-height);
+    letter-spacing: var(--font-h4-letter-spacing);
+}
+
+h5,
+.heading-fifth {
+    margin: 0;
+    text-transform: uppercase;
+    font-family: var(--font-nevermind-compact);
+    font-size: var(--font-h5-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-h5-line-height);
+    letter-spacing: var(--font-h5-letter-spacing);
+}
+
+h6,
+.heading-sixth {
+    margin: 0;
+    font-family: var(--font-nevermind-compact);
+    font-size: var(--font-h6-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-h6-line-height);
+    letter-spacing: var(--font-h6-letter-spacing);
+}
+
+.font-text {
+    font-family: var(--font-nevermind-compact);
+    font-size: var(--font-text1-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-text1-line-height);
+    letter-spacing: var(--font-text1-letter-spacing);
+}
+
+.font-text2 {
+    font-family: var(--font-nevermind-compact);
+    font-size: var(--font-text2-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-text2-line-height);
+    letter-spacing: var(--font-text2-letter-spacing);
+}
+
+.font-primary-button {
+    font-family: var(--font-nevermind-compact);
+    font-size: var(--font-button1-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-button1-line-height);
+    letter-spacing: var(--font-button1-letter-spacing);
+}
+
+.font-link-button {
+    font-family: var(--font-nevermind-compact);
+    font-size: var(--font-button2-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-button2-line-height);
+    letter-spacing: var(--font-button2-letter-spacing);
+}
+
+.font-menu {
+    font-family: var(--font-nevermind-compact);
+    font-size: var(--font-menu-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-menu-line-height);
+    letter-spacing: var(--font-menu-letter-spacing);
+}
+
+.font-breadcrumb {
+    font-family: var(--font-nevermind-compact);
+    font-size: var(--font-breadcrumbs-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-breadcrumbs-line-height);
+    letter-spacing: var(--font-breadcrumbs-letter-spacing);
+}
+
+.tag {
+    font-family: var(--font-nevermind-compact);
+    font-size: var(--font-tag-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-tag-line-height);
+    letter-spacing: var(--font-tag-letter-spacing);
+}
+
+@media (min-width: 768px) {
+    :root {
+        --font-h1-size: 98px;
+        --font-h2-size: 52px;
+        --font-h3-size: 52px;
+        --font-h4-size: 32px;
+        --font-h5-size: 18px;
+        --font-h6-size: 18px;
+        --font-button1-size: 16px;
+        --font-button2-size: 12px;
+        --font-text1-size: 14px;
+        --font-text2-size: 12px;
+        --font-menu-size: 12px;
+        --font-breadcrumbs-size: 12px;
+        --font-tag-size: 14px;
+    }
+}
+
+@media (min-width: 1440px) {
+    :root {
+        --font-h1-size: 135px;
+        --font-h2-size: 75px;
+        --font-h3-size: 70px;
+        --font-h4-size: 45px;
+        --font-h5-size: 24px;
+        --font-h6-size: 24px;
+        --font-button1-size: 18px;
+        --font-button2-size: 16px;
+        --font-text1-size: 16px;
+        --font-text2-size: 14px;
+        --font-menu-size: 14px;
+        --font-breadcrumbs-size: 12px;
+        --font-tag-size: 14px;
+    }
+}
+
+@media (min-width: 1920px) {
+    :root {
+        --font-h1-size: 180px;
+        --font-h2-size: 100px;
+        --font-h3-size: 100px;
+        --font-h4-size: 60px;
+        --font-h5-size: 28px;
+        --font-h6-size: 28px;
+        --font-button1-size: 24px;
+        --font-button2-size: 20px;
+        --font-text1-size: 20px;
+        --font-text2-size: 18px;
+        --font-menu-size: 18px;
+        --font-breadcrumbs-size: 16px;
+        --font-tag-size: 18px;
+    }
+}
+
+@font-face {
+    font-family: "Bebas Neue";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("../../fonts/Bebas-Neue.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Nevermind compact";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("../../fonts/NeverMindCompact-Regular.woff2") format("woff2");
+}
+
