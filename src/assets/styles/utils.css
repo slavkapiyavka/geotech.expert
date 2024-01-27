@@ -1,48 +1,75 @@
-.container {
-    --vertical-padding: 80px;
-    --horizontal-padding: 10px;
+.main-content {
     display: grid;
-    grid-template-rows: min-content;
-    width: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
-    padding: var(--vertical-padding) var(--horizontal-padding);
+    z-index: 10;
 }
 
-@media (min-width: 768px) {
-    .container {
-        --vertical-padding: 100px;
-        --horizontal-padding: 20px;
-    }
+.no-scroll {
+    overflow: hidden;
 }
 
-@media (min-width: 1440px) {
-    .container {
-        --vertical-padding: 140px;
-        --horizontal-padding: 30px;
-    }
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
-@media (min-width: 1920px) {
-    .container {
-        --vertical-padding: 180px;
-        --horizontal-padding: 40px;
-    }
+
+.short-text-two {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
-.container__title {
-    font-family: var(--font-bebas-neue);
-    font-size: var(--font-h1-size);
-    font-weight: var(--regular-font-weight);
-    line-height: var(--font-h1-line-height);
-    letter-spacing: var(--font-h1-letter-spacing);
-    margin: 0 0 8px 0;
+.short-text-three {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
 }
 
-.container__subtitle {
-    font-family: var(--font-nevermind-compact);
-    font-size: var(--font-text2-size);
-    font-weight: var(--regular-font-weight);
-    line-height: var(--font-text2-line-height);
-    letter-spacing: var(--font-text2-letter-spacing);
+.color-orange {
+    color: var(--orange);
+}
+
+.color-dark-blue {
+    color: var(--dark-blue);
+}
+
+.color-beige {
+    color: var(--beige);
+}
+
+.background-color-white {
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+
+.background-color-orange {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.background-color-dark-blue {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+.background-color-beige {
+    background-color: var(--beige);
+}
+
+.text-break::after {
+    content: "\A";
+    white-space: pre;
 }

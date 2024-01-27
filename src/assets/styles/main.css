@@ -2,4 +2,6 @@
 @import "variables/fonts.css";
 @import "variables/geometry.css";
 @import "variables/colors.css";
+@import "animations/reveal.css";
+@import "components/container.css";
 @import "components/hamburger.css";

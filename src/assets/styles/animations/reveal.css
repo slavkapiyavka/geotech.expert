@@ -1,0 +1,33 @@
+.reveal.reveal {
+    opacity: 0;
+    transition: all 450ms ease-in-out 125ms;
+}
+
+.reveal.reveal_top {
+    transform: translateY(-45px);
+}
+
+.reveal.reveal_right {
+    transform: translateX(45px);
+}
+
+.reveal.reveal_bottom {
+    transform: translateY(45px);
+}
+
+.reveal.reveal_left {
+    transform: translateX(-45px);
+}
+
+.reveal.reveal_visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal.reveal.delay-1250 {
+    transition-delay: 1250ms;
+}
+
+.reveal.reveal.delay-1750 {
+    transition-delay: 1750ms;
+}
