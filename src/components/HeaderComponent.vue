@@ -1,6 +1,6 @@
 <script setup lang="js">
 import { useRoute } from "vue-router";
-import {computed} from "vue";
+import {computed, ref} from "vue";
 
 const route = useRoute();
 const links = [
@@ -11,13 +11,23 @@ const links = [
   { title: 'Блог', path: '/blog'},
   { title: 'Контакты', path: '/contacts'},
 ];
+const mobileMenuToggleRef = ref(null);
+const isMenuOpen = ref(false);
+const navigationMobileRef = ref(null);
+const headerRef = ref(null);
 
 const isActive = (path) => route.path === path;
+
 const showCompactLogo = computed(() => route.name === 'index');
+
+const toggleMobileMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+  document.body.classList.toggle('no-scroll', isMenuOpen.value);
+}
 </script>
 
 <template>
-  <div class="main-header-wrapper">
+  <div class="main-header-wrapper" ref="headerRef">
     <header class="main-header container">
       <div class="main-header__logo">
         <a href="/">
@@ -38,16 +48,14 @@ const showCompactLogo = computed(() => route.name === 'index');
           </svg>
         </a>
       </div>
-      <div class="main-nav-mobile-wrapper">
+      <div class="main-nav-mobile-wrapper" :class="{ 'visible': isMenuOpen }" ref="navigationMobileRef">
         <nav class="main-nav">
           <ul class="main-nav__list">
-            <li>
+            <li v-for="link in links" :key="link.path">
               <RouterLink
-                  v-for="link in links"
-                  :key="link.path"
                   :to="link.path"
                   :class="{ 'main-nav__link_active': isActive(link.path)}"
-                  class="main-nav__link link">
+                  class="main-nav__link link font-menu">
                 {{ link.title }}
               </RouterLink>
             </li>
@@ -55,15 +63,206 @@ const showCompactLogo = computed(() => route.name === 'index');
         </nav>
 
         <div class="main-header__contacts">
-          <a class="main-nav__link link" href="tel:8800752108">8 (800) 75 21 08</a>
-          <a class="main-nav__link link" href="mailto:office@geotech.expert">office@geotech.expert</a>
+          <a class="main-nav__link link font-menu" href="tel:8800752108">8 (800) 75 21 08</a>
+          <a class="main-nav__link link font-menu" href="mailto:office@geotech.expert">office@geotech.expert</a>
         </div>
       </div>
-      <div id="hamburgerTrigger" class="hamburger"></div>
+      <div
+          ref="mobileMenuToggleRef"
+          class="hamburger"
+          :class="{ 'hamburger_open': isMenuOpen }"
+          @click="toggleMobileMenu"
+      ></div>
     </header>
   </div>
 </template>
 
 <style scoped>
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  min-height: 56px;
+}
+
+.main-header-wrapper {
+  background-color: var(--white);
+  position: sticky;
+  top: -14%;
+  z-index: 12;
+  transition: top 325ms;
+}
+
+.main-header-wrapper_sticky {
+  top: 0;
+}
+
+.main-header__logo {
+  display: contents;
+}
+
+.main-header__logo .big-icon {
+  width: 182px;
+  height: 36px;
+}
+
+.main-header__logo .compact-icon {
+  width: 54px;
+  height: 36px;
+}
+
+.main-header__contacts {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+.main-header__contacts .link {
+  text-decoration: none;
+  color: var(--dark-blue, #17425a);
+  padding-top: 36px;
+  margin-bottom: 30px;
+  border-top: 1px solid var(--dark-blue);
+}
+
+@media (min-width: 768px) {
+  .main-header {
+    padding: 0 20px;
+  }
+
+  .main-header__logo .big-icon {
+    width: 121px;
+    height: 24px;
+  }
+
+  .main-header__logo .compact-icon {
+    width: 36px;
+    height: 24px;
+  }
+
+  .main-header__contacts {
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .main-header {
+    padding: 0 30px;
+    min-height: 60px;
+  }
+
+  .main-header__logo .big-icon {
+    width: 152px;
+    height: 30px;
+  }
+
+  .main-header__logo .compact-icon {
+    width: 45px;
+    height: 30px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .main-header {
+    padding: 0 40px;
+    min-height: 80px;
+  }
+
+  .main-header__logo .big-icon {
+    width: 202px;
+    height: 40px;
+  }
+
+  .main-header__logo .compact-icon {
+    width: 60px;
+    height: 40px;
+  }
+}
+
+.main-nav {
+  flex: 1;
+  overflow: auto;
+  margin-top: min(8vh, 134px);
+}
+
+.main-nav__list {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 28px;
+  min-height: 100%;
+  border-left: 1px solid var(--dark-blue);
+}
+
+.main-nav__list li {
+  margin-bottom: 24px;
+}
+
+.main-nav__link {
+  font-family: var(--font-bebas-neue);
+  color: var(--dark-blue);
+  text-decoration: none;
+  padding: 0 8px;
+  word-wrap: break-word;
+}
+
+.main-nav__link_active {
+  color: var(--dark-blue);
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    flex: initial;
+    overflow: auto;
+    margin-top: 0;
+  }
+
+  .main-nav__list {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+    border-left: none;
+    margin-left: 0;
+  }
+
+  .main-nav__list li {
+    margin-bottom: 0;
+  }
+
+  .main-nav__link {
+    padding: 0;
+    font-family: var(--font-nevermind-compact);
+    color: var(--dark-blue-75);
+  }
+}
+
+.main-nav-mobile-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  inset: 0;
+  top: 48px;
+  left: 30%;
+  height: calc(100dvh - 48px);
+  opacity: 0;
+  background-color: var(--white, #ffffff);
+  transition: left 125ms, opacity 125ms;
+  z-index: -1;
+  pointer-events: none;
+
+  @media (min-width: 768px) {
+    display: contents;
+    pointer-events: all;
+  }
+}
+
+.main-nav-mobile-wrapper.visible {
+  z-index: 10;
+  opacity: 1;
+  left: 0;
+  pointer-events: all;
+}
 
 </style>
