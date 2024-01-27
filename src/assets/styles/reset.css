@@ -1,0 +1,141 @@
+#app {
+    display: contents;
+}
+
+body {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: auto 1fr;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    font-weight: normal;
+    scrollbar-width: thin !important;
+
+    @media (min-width: 1440px) and (hover: hover) {
+        cursor: url("../images/cursor/cursor.svg") 25 25, crosshair;
+    }
+}
+
+html {
+    scrollbar-color: var(--orange) var(--white);
+    scrollbar-gutter: stable;
+    overflow-scrolling: auto;
+
+    @media (prefers-reduced-motion: no-preference) {
+        scroll-behavior: smooth;
+    }
+}
+
+body {
+    font-family: var(--font-nevermind-compact), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+    font-weight: 400;
+    min-height: calc(var(--main-content-height) + var(--footer-height));
+    margin: 0;
+    color: var(--dark-blue, #17425a);
+    overflow-x: hidden; /* FIXME: Remove this property and fix horizontal scroll */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@supports (text-wrap: balance) {
+    h1, h2, h3, h4, h5, h6 {
+        text-wrap: balance;
+    }
+}
+
+@supports (text-wrap: pretty) {
+    p {
+        text-wrap: pretty;
+    }
+}
+
+img {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        background-color: rgb(229, 233, 235);
+        /*background-image: var(--image-placeholder);*/
+        background-repeat: no-repeat;
+        background-size: contain;
+        inset: 0;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+summary {
+    position: relative;
+}
+summary::marker {
+    content: none;
+}
+summary::before,
+summary::after {
+    content: '';
+}
+summary::before,
+summary::after {
+    width: 20px;
+    height: 0;
+    border-bottom: 1px solid;
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    transform: translateY(-50%);
+    transition: transform 125ms;
+
+    @media (min-width: 1440px) {
+        width: 24px;
+    }
+
+    @media (min-width: 1920px) {
+        width: 30px;
+    }
+}
+summary::after {
+    transform: rotate(90deg);
+    transform-origin: 50% 50%;
+}
+[open] summary::after {
+    transform: rotate(0deg);
+}
+
+hr {
+    width: 100%;
+    margin: 0;
+    background-color: var(--dark-blue);
+}
+
+a, button {
+    @media (min-width: 1440px) {
+        &:hover {
+            cursor: url("../images/cursor/cursor-hover.svg") 25 25, crosshair;
+        }
+    }
+}
