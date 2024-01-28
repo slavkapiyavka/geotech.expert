@@ -1,7 +1,11 @@
 <script setup>
-import { RouterView } from 'vue-router';
+import { RouterView, useRoute } from 'vue-router';
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import FooterComponent from "@/components/FooterComponent.vue";
+import { computed } from "vue";
+
+const route = useRoute();
+const showFooter = computed(() => route.name !== 'contacts');
 </script>
 
 <template>
@@ -9,5 +13,5 @@ import FooterComponent from "@/components/FooterComponent.vue";
   <main class="main-content">
     <RouterView />
   </main>
-  <FooterComponent />
+  <FooterComponent v-if="showFooter" />
 </template>
