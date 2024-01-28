@@ -1,4 +1,5 @@
 @import "reset.css";
+@import "components/scrollbar.css";
 @import "utils.css";
 @import "variables/fonts.css";
 @import "variables/geometry.css";
@@ -7,4 +8,9 @@
 @import "components/container.css";
 @import "components/hamburger.css";
 @import "components/buttons.css";
+@import "components/tab.css";
+@import "components/table.css";
+@import "components/tag.css";
+@import "components/article.css";
+@import "components/article-detailed.css";
 @import "blocks/introduction.css";

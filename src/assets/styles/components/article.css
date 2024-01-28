@@ -1,0 +1,36 @@
+.article {
+    margin: 0;
+}
+
+.article__image {
+    aspect-ratio: 5 / 4;
+    margin: 0 0 16px 0;
+}
+
+.article__tag {
+    margin: 0 0 16px 0;
+}
+
+.article__title {
+    margin: 0 0 12px 0;
+}
+
+.article__excerpt {
+    margin: 0;
+}
+
+.article__link {
+    color: var(--dark-blue);
+    font-family: var(--font-nevermind-compact);
+    font-size: var(--font-button2-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-button2-line-height);
+    letter-spacing: var(--font-button2-letter-spacing);
+    text-transform: uppercase;
+    text-underline-offset: 8px;
+    transition: color 125ms;
+}
+
+.article__link:hover {
+    color: var(--orange);
+}

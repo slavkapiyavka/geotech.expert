@@ -1,3 +1,4 @@
+/* primary button start */
 .primary-button {
     display: block;
     width: 100%;
@@ -82,3 +83,84 @@
     color: currentColor;
     text-decoration: none;
 }
+/* primary button end */
+
+/* share buttons start */
+.share-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.share-button {
+    --share-button-size: 40px;
+    
+    display: grid;
+    place-items: center;
+    width: var(--share-button-size);
+    height: var(--share-button-size);
+    border-radius: var(--share-button-size);
+    border: none;
+    background-color: var(--dark-blue-10);
+}
+
+@media (min-width: 1920px) {
+    .share-button {
+        --share-button-size: 48px;
+    }
+}
+/* share buttons end */
+
+/* close button start */
+.close-button {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    min-width: 22px;
+    min-height: 22px;
+    padding: 22px;
+    border: none;
+    background-color: white;
+    border-radius: 22px;
+    z-index: 1;
+    transform: translate3d(0px, 0px, 0px);
+    transition: transform 175ms ease;
+}
+
+.close-button::before,
+.close-button::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    width: 20px;
+    height: 0;
+    border-bottom: 1px solid;
+    top: calc(50% - 1px);
+    transform: translateY(-50%);
+    transition: transform 125ms;
+}
+
+@media (min-width: 1440px) {
+    .close-button::before,
+    .close-button::after {
+        width: 24px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .close-button::before,
+    .close-button::after {
+        width: 30px;
+    }
+}
+
+.close-button::after {
+    transform: rotate(45deg);
+}
+
+.close-button::before {
+    transform: rotate(-45deg);
+}
+/* close button end */

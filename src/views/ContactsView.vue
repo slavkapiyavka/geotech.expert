@@ -64,7 +64,6 @@ onMounted(() => {
 }
 
 .contact__link {
-  /* @include heading-second; Replace with specific CSS rules for heading-second */
   color: var(--white);
   text-decoration: none;
 }

@@ -1,0 +1,227 @@
+.article-detailed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: var(--white);
+    z-index: 100;
+    display: grid;
+    grid-template-areas:
+    'tag'
+    'title'
+    'share-buttons'
+    'image'
+    'text'
+    'illustrations';
+    overflow: auto;
+    animation: slideInFromBottom 125ms ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .article-detailed {
+        grid-template-areas:
+      'tag .'
+      'title share-buttons'
+      'image image'
+      'text .'
+      'illustrations illustrations';
+    }
+}
+
+.article-detailed__title {
+    grid-area: title;
+    margin-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+    .article-detailed__title {
+        margin-bottom: 40px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .article-detailed__title {
+        margin-bottom: 60px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .article-detailed__title {
+        margin-bottom: 80px;
+    }
+}
+
+.article-detailed__image {
+    grid-area: image;
+    width: 100%;
+    height: 237px;
+    object-fit: cover;
+    margin: 0 0 8px 0;
+}
+
+@media (min-width: 768px) {
+    .article-detailed__image {
+        margin: 0 0 16px 0;
+        height: 242px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .article-detailed__image {
+        margin: 0 0 60px 0;
+        height: 328px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .article-detailed__image {
+        margin: 0 0 80px 0;
+        height: 460px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .article-detailed__image {
+        margin: 0 0 100px 0;
+        height: 614px;
+    }
+}
+
+.article-detailed-text {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 16px;
+    grid-area: text;
+    margin: 0 0 40px 0;
+}
+
+@media (min-width: 768px) {
+    .article-detailed-text {
+        margin-bottom: 60px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .article-detailed-text {
+        grid-auto-flow: column;
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+@media (min-width: 1440px) {
+    .article-detailed-text {
+        margin-bottom: 80px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .article-detailed-text {
+        margin-bottom: 100px;
+    }
+}
+
+.article-detailed-text p {
+    margin: 0;
+}
+
+.article-detailed-text p.author {
+    color: var(--dark-blue-75);
+    margin: 0 0 40px 0;
+}
+
+@media (min-width: 768px) {
+    .article-detailed-text p.author {
+        margin-bottom: 60px;
+    }
+}
+
+.article-detailed-text .text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 910px;
+}
+
+@media (min-width: 768px) {
+    .article-detailed-text .text {
+        gap: 22px;
+        max-width: 682px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .article-detailed-text .text {
+        gap: 30px;
+        max-width: 910px;
+    }
+}
+
+.article-detailed-illustrations {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 10px;
+    grid-area: illustrations;
+}
+
+@media (min-width: 768px) {
+    .article-detailed-illustrations {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .article-detailed-illustrations {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 1440px) {
+    .article-detailed-illustrations {
+        gap: 20px;
+    }
+}
+
+.article-detailed .tag {
+    grid-area: tag;
+    margin-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+    .article-detailed .tag {
+        margin-bottom: 16px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .article-detailed .tag {
+        margin-bottom: 20px;
+    }
+}
+
+.article-detailed-paragraph {
+    font-family: var(--font-nevermind-compact);
+    font-size: var(--font-text2-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-text2-line-height);
+    letter-spacing: var(--font-text2-letter-spacing);
+    text-transform: none;
+}
+
+.article-detailed .share-buttons {
+    grid-area: share-buttons;
+}
+
+@media (min-width: 768px) {
+    .article-detailed .share-buttons {
+        align-self: start;
+        margin-bottom: 0;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+}
