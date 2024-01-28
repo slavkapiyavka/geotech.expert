@@ -1,0 +1,13 @@
+.hero.engineering {
+    grid-template-areas:
+    'title'
+    'subtitle';
+}
+
+.hero.engineering .hero__title {
+    grid-area: title;
+}
+
+.hero.engineering .hero__subtitle {
+    grid-area: subtitle;
+}

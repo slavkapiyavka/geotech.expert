@@ -13,4 +13,9 @@
 @import "components/tag.css";
 @import "components/article.css";
 @import "components/article-detailed.css";
+@import "blocks/background-shape.css";
+@import "blocks/hero.css";
+@import "blocks/hero-index.css";
+@import "blocks/hero-about.css";
+@import "blocks/hero-engineering.css";
 @import "blocks/introduction.css";

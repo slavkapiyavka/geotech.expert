@@ -1,0 +1,25 @@
+.hero.about {
+    padding-top: 106px;
+}
+
+@media (min-width: 768px) {
+    .hero.about {
+        padding-top: 46px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .hero.about {
+        padding-top: 64px;
+    }
+}
+
+.hero.about .hero__subtitle {
+    max-width: 332px;
+}
+
+@media (min-width: 1440px) {
+    .hero.about .hero__subtitle {
+        max-width: 432px;
+    }
+}

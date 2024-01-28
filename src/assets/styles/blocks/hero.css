@@ -1,0 +1,172 @@
+.hero {
+    position: relative;
+    grid-template-areas: 'title';
+    padding-top: 58px;
+    padding-bottom: 40px;
+    min-height: 500px;
+    height: 100%;
+    transform: translate(0);
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding-top: 62px;
+        padding-bottom: 116px;
+        min-height: 360px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        padding-bottom: 70px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .hero {
+        padding-bottom: 30px;
+        min-height: 412px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .hero {
+        padding-bottom: 40px;
+        min-height: 520px;
+    }
+}
+
+.hero-container {
+    position: relative;
+}
+
+.hero-wrapper {
+    overflow: hidden;
+}
+
+.hero__decorative-title {
+    grid-area: decorative-title;
+    padding-left: 62px;
+    margin-bottom: 36px;
+}
+
+@media (min-width: 768px) {
+    .hero__decorative-title {
+        margin-bottom: 20px;
+    }
+}
+
+.hero__title {
+    margin: 0;
+    font-family: var(--font-bebas-neue);
+    font-size: var(--font-h1-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-h1-line-height);
+    letter-spacing: var(--font-h1-letter-spacing);
+    grid-area: title;
+}
+
+.hero__title.decoration-line {
+    position: relative;
+}
+
+.hero__title.decoration-line::after {
+    z-index: 0;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -34px;
+    width: 306px;
+    height: 100dvh;
+    background-image: url("../../images/pages/index/hero-title-decorative-lines.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top left;
+    pointer-events: none;
+}
+
+@media (min-width: 768px) {
+    .hero__title.decoration-line::after {
+        width: 497px;
+        top: -26px;
+        background-image: url("../../images/pages/index/hero-title-decorative-lines-768.svg");
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero__title.decoration-line::after {
+        background-image: url("../../images/pages/index/hero-title-decorative-lines-1024.svg");
+    }
+}
+
+@media (min-width: 1440px) {
+    .hero__title.decoration-line::after {
+        width: 674px;
+        top: -28px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .hero__title.decoration-line::after {
+        width: 904px;
+    }
+
+    .hero__title.decoration-line {
+        padding-top: 16px;
+    }
+}
+
+.hero__subtitle {
+    grid-area: subtitle;
+}
+
+.hero__description,
+.hero__subtitle {
+    font-family: var(--font-nevermind-compact);
+    font-size: var(--font-text1-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-text1-line-height);
+    letter-spacing: var(--font-text1-letter-spacing);
+    margin: 0;
+}
+.hero__picture {
+    grid-area: picture;
+    width: 150px;
+    margin: 0 auto 108px;
+}
+
+@media (min-width: 768px) {
+    .hero__picture {
+        width: 329px;
+        margin: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero__picture {
+        width: 350px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .hero__picture {
+        width: 394px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .hero__picture {
+        width: 526px;
+    }
+}
+
+.hero .primary-button {
+    grid-area: button;
+}
+
+@media (min-width: 768px) {
+    .hero .primary-button {
+        margin-bottom: 57px;
+        order: 1;
+    }
+}
