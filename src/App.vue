@@ -1,17 +1,23 @@
 <script setup>
-import { RouterView, useRoute } from 'vue-router';
-import HeaderComponent from "@/components/HeaderComponent.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
+import { useRoute } from "vue-router";
 import { computed } from "vue";
+import ContactsLayout from "@/layouts/ContactsLayout.vue";
+import BaseLayout from "@/layouts/BaseLayout.vue";
+import NotFoundLayout from "@/layouts/NotFoundLayout.vue";
 
 const route = useRoute();
-const showFooter = computed(() => route.name !== 'contacts');
+
+const layout = computed(() => {
+  if(route.name === 'contacts') {
+    return ContactsLayout;
+  } else if(route.name === 'notFound') {
+    return NotFoundLayout;
+  } else {
+    return BaseLayout;
+  }
+})
 </script>
 
 <template>
-  <HeaderComponent />
-  <main class="main-content">
-    <RouterView />
-  </main>
-  <FooterComponent v-if="showFooter" />
+  <component :is="layout" />
 </template>

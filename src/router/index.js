@@ -8,7 +8,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'index',
-      component: IndexView
+      component: () => import('../views/IndexView.vue')
     },
     {
       path: '/about',
@@ -39,6 +39,14 @@ const router = createRouter({
       path: '/contacts',
       name: 'contacts',
       component: () => import('../views/ContactsView.vue')
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'notFound',
+      component: () => import('../views/NotFoundView.vue'),
+      meta: {
+
+      }
     }
   ]
 })
