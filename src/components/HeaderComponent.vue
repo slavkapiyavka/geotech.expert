@@ -30,7 +30,11 @@ const toggleMobileMenu = () => {
 const handleScroll = () => {
   const currentScrollY = window.scrollY;
 
-  isSticky.value = currentScrollY < lastScrollY;
+  if(lastScrollY - currentScrollY > 10) {
+    isSticky.value = true;
+  } else if(currentScrollY - lastScrollY > 0) {
+    isSticky.value = false;
+  }
 
   lastScrollY = currentScrollY;
 }
