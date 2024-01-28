@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import IndexView from '../views/IndexView.vue'
+import {globalStore} from "@/store.js";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +41,14 @@ const router = createRouter({
       component: () => import('../views/ContactsView.vue')
     }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  if (globalStore.isMenuOpen) {
+    globalStore.isMenuOpen = false;
+    document.body.classList.remove('no-scroll');
+  }
+  next();
 })
 
 export default router
