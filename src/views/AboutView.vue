@@ -1,7 +1,7 @@
 <script setup>
 import BreadcrumbsComponent from "@/components/BreadcrumbsComponent.vue";
-import { onMounted, ref } from 'vue';
 import RequestFormComponent from "@/components/RequestFormComponent.vue";
+import { onMounted, ref } from 'vue';
 
 const pageTitle = ref('О компании');
 
