@@ -130,7 +130,7 @@ const toggleMobileMenu = () => {
   </div>
 </template>
 
-<style scoped>
+<style>
 .main-header {
   display: flex;
   justify-content: space-between;
