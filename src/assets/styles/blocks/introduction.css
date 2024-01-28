@@ -66,6 +66,7 @@
 }
 
 .introduction-wrapper {
+    background-color: var(--orange);
     height: fit-content;
 }
 
