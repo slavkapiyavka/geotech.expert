@@ -1,6 +1,6 @@
 <script setup lang="js">
 import { useRoute } from 'vue-router';
-import { computed, ref } from 'vue';
+import {computed, onMounted, onUnmounted, ref} from 'vue';
 import { globalStore } from "@/store.js";
 
 const route = useRoute()
@@ -15,8 +15,10 @@ const links = [
 const mobileMenuToggleRef = ref(null)
 const navigationMobileRef = ref(null)
 const headerRef = ref(null)
+const isSticky = ref(false)
+let lastScrollY = 0
 
-const isActive = (path) => route.path === path
+const isActiveRoute = (path) => route.path === path;
 
 const showCompactLogo = computed(() => route.name === 'index')
 
@@ -24,10 +26,26 @@ const toggleMobileMenu = () => {
   globalStore.isMenuOpen = !globalStore.isMenuOpen
   document.body.classList.toggle('no-scroll', globalStore.isMenuOpen)
 }
+
+const handleScroll = () => {
+  const currentScrollY = window.scrollY;
+
+  isSticky.value = currentScrollY < lastScrollY;
+
+  lastScrollY = currentScrollY;
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
-  <div class="main-header-wrapper" ref="headerRef">
+  <div class="main-header-wrapper" :class="{ 'main-header-wrapper_sticky': isSticky }" ref="headerRef">
     <header class="main-header container">
       <div class="main-header__logo">
         <a href="/">
@@ -104,7 +122,7 @@ const toggleMobileMenu = () => {
             <li v-for="link in links" :key="link.path">
               <RouterLink
                 :to="link.path"
-                :class="{ 'main-nav__link_active': isActive(link.path) }"
+                :class="{ 'main-nav__link_active': isActiveRoute(link.path) }"
                 class="main-nav__link link font-menu"
               >
                 {{ link.title }}
