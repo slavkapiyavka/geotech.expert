@@ -1,7 +1,9 @@
 <script setup lang="js">
-import {nextTick, onMounted, ref} from "vue";
+import {nextTick, onMounted, onUnmounted, ref} from "vue";
 
-const textarea = ref(null);
+const textarea = ref(null)
+const listElements = ref([])
+
 const adjustTextareaHeight = () => {
   nextTick(() => {
     if(textarea.value) {
@@ -16,6 +18,28 @@ onMounted(() => {
   if (textarea.value) {
     adjustTextareaHeight();
   }
+
+  listElements.value = document.querySelectorAll('.animated-underline');
+
+  const underlineObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  listElements.value.forEach((element) => {
+    underlineObserver.observe(element);
+  });
+
+  onUnmounted(() => {
+    listElements.value.forEach((element) => {
+      underlineObserver.unobserve(element);
+    })
+  })
 });
 </script>
 
@@ -387,6 +411,7 @@ onMounted(() => {
 }
 
 .directions-list__element {
+  position: relative;
   display: grid;
   grid-template-columns: min-content auto;
   gap: 20px;
@@ -440,7 +465,15 @@ onMounted(() => {
   bottom: 0;
   height: 1px;
   background-color: var(--dark-blue);
-  transition: width 2550ms ease-in;
+  transition: width 1750ms ease-in;
+}
+
+.animated-underline:nth-child(2) {
+  transition-delay: 250ms;
+}
+
+.animated-underline:nth-child(3) {
+  transition-delay: 500ms;
 }
 
 .directions-list__element.animated-underline.visible::after {
