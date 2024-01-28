@@ -922,16 +922,44 @@ onMounted(() => {
 .stages-list__stage_white {
   color: var(--dark-blue);
   background-color: var(--white);
+  border: 1px solid var(--white);
+  transition: background-color 275ms, color 275ms, border-color 275ms;
+}
+
+@media (min-width: 768px) {
+  .stages-list__stage_white:hover {
+    color: var(--dark-blue);
+    border: 1px solid var(--dark-blue);
+    background-color: transparent;
+  }
 }
 
 .stages-list__stage_dark-blue {
   color: var(--white);
+  border: 1px solid var(--dark-blue);
   background-color: var(--dark-blue);
+  transition: background-color 275ms, color 275ms;
+}
+
+@media (min-width: 768px) {
+  .stages-list__stage_dark-blue:hover {
+    color: var(--dark-blue);
+    background-color: transparent;
+  }
 }
 
 .stages-list__stage_orange {
   color: var(--white);
+  border: 1px solid var(--orange);
   background-color: var(--orange);
+  transition: background-color 275ms, color 275ms;
+}
+
+@media (min-width: 768px) {
+  .stages-list__stage_orange:hover {
+    color: var(--orange);
+    background-color: transparent;
+  }
 }
 
 .stages-list__stage span {
