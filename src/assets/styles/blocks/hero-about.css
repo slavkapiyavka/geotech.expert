@@ -1,4 +1,5 @@
 .hero.about {
+    grid-template-areas: 'title' 'subtitle';
     padding-top: 106px;
 }
 
