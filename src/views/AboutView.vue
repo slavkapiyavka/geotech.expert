@@ -2,11 +2,17 @@
 import BreadcrumbsComponent from "@/components/BreadcrumbsComponent.vue";
 import RequestFormComponent from "@/components/RequestFormComponent.vue";
 import { onMounted, ref } from 'vue';
+import { useVisibilityEffect } from "@/composables/useVisibilityEffect.js";
+import Splitting from "splitting";
 
 const pageTitle = ref('О компании');
 
+useVisibilityEffect('.reveal');
+useVisibilityEffect('[data-splitting]');
+
 onMounted(() => {
   document.title = pageTitle.value;
+  Splitting({ by: 'lines' });
 });
 </script>
 
@@ -25,11 +31,11 @@ onMounted(() => {
 
   <div class="introduction-wrapper background-color-orange">
     <section class="introduction about container">
-      <h2 class="introduction__title">
+      <h2 class="introduction__title" data-splitting>
         Наша команда способна эффективно решать сложные задачи и создавать уникальные проекты для каждого клиента
       </h2>
 
-      <section class="manager">
+      <section class="manager reveal reveal_right">
         <img src="../assets/images/manager.png" width="105" height="105" alt="Фотография генерального директора - Денис Дейнеко" class="manager__image" loading="lazy">
         <p class="manager__bio">
           <span class="manager__name">Денис Дейнеко</span>
@@ -78,7 +84,7 @@ onMounted(() => {
       </p>
 
       <ul class="licenses-list">
-        <li class="license">
+        <li class="license reveal reveal_right">
           <a href="../assets/documents/cpo_16_10_2023.pdf" class="license__link" download="Выписка_СРО_16102023">
             <p class="license__name">CPO</p>
             <p class="license__info">
@@ -117,7 +123,6 @@ onMounted(() => {
 .licenses-list {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--dark-blue);
 }
 
 /* manager block start */
@@ -418,8 +423,35 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: -1px;
   padding: 16px 0;
+  border-top: 1px solid var(--dark-blue);
   border-bottom: 1px solid var(--dark-blue);
+}
+
+.license.visible {
+  animation: easeOutElastic 750ms forwards;
+}
+
+@keyframes easeOutElastic {
+  0% {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+
+  25% {
+    transform: translateX(-10px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(6px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+
 }
 
 @media (min-width: 768px) {
