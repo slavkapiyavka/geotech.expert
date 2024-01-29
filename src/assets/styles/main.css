@@ -6,6 +6,7 @@
 @import "variables/colors.css";
 @import "animations/reveal.css";
 @import "animations/dynamic.css";
+@import "animations/slides.css";
 @import "components/container.css";
 @import "components/hamburger.css";
 @import "components/buttons.css";
