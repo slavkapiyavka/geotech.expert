@@ -1,6 +1,6 @@
 .reveal.reveal {
     opacity: 0;
-    transition: all 450ms ease-in-out 125ms;
+    transition: all 450ms ease-in-out;
 }
 
 .reveal.reveal_top {
@@ -19,7 +19,7 @@
     transform: translateX(-45px);
 }
 
-.reveal.reveal_visible {
+.reveal.visible {
     opacity: 1;
     transform: translateX(0);
 }
