@@ -4,6 +4,7 @@ import { useMovingEffect } from "@/composables/useMovingEffect.js";
 import { useVisibilityEffect } from "@/composables/useVisibilityEffect.js";
 import Splitting from 'splitting';
 
+const pageTitle = ref('Главная | Геотехзащита')
 const textarea = ref(null)
 const listElements = ref([])
 const animatedTitles = ref([])
@@ -11,7 +12,7 @@ const movingElements = ref([])
 const mainTitle = ref('Геотехзащита')
 
 const updateTextBasedOnLang = () => {
-  const lang = document.documentElement.lang; // Получаем текущее значение атрибута lang
+  const lang = document.documentElement.lang;
   mainTitle.value = lang === 'ru' ? 'Геотехзащита' : 'Geotechprotect';
 };
 
@@ -34,15 +35,16 @@ watchEffect(() => {
 })
 
 onMounted(() => {
+  document.title = pageTitle.value;
+  listElements.value = document.querySelectorAll('.animated-underline');
+  animatedTitles.value = document.querySelectorAll('.animated-title');
+  movingElements.value = document.querySelectorAll('.moving');
+
   Splitting({ by: 'lines' });
 
   if (textarea.value) {
     adjustTextareaHeight();
   }
-
-  listElements.value = document.querySelectorAll('.animated-underline');
-  animatedTitles.value = document.querySelectorAll('.animated-title');
-  movingElements.value = document.querySelectorAll('.moving');
 
   const translationObserver = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {

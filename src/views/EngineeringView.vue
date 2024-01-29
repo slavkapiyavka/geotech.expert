@@ -1,9 +1,18 @@
 <script setup lang="js">
+import RequestFormComponent from "@/components/RequestFormComponent.vue";
+import BreadcrumbsComponent from "@/components/BreadcrumbsComponent.vue";
+import {onMounted, ref} from "vue";
 
+const pageTitle = ref('Проектирование | Геотехзащита');
+
+onMounted(() => {
+  document.title = pageTitle.value;
+})
 </script>
 
 <template>
-  <section>проектирование</section>
+  <BreadcrumbsComponent :page-title="pageTitle" />
+  <RequestFormComponent />
 </template>
 
 <style scoped>

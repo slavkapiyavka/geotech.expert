@@ -2,7 +2,7 @@
 import BreadcrumbsComponent from "@/components/BreadcrumbsComponent.vue";
 import { onMounted, ref } from 'vue';
 
-const pageTitle = ref('О компании');
+const pageTitle = ref('О компании | Геотехзащита');
 
 onMounted(() => {
   document.title = pageTitle.value;

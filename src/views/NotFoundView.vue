@@ -1,5 +1,11 @@
 <script setup>
+import { onMounted, ref } from "vue";
 
+const pageTitle = ref('Страница не найдена | Геотехзащита');
+
+onMounted(() => {
+  document.title = pageTitle.value;
+})
 </script>
 
 <template>

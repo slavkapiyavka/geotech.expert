@@ -5,7 +5,7 @@ import { onMounted, ref } from 'vue';
 import { useVisibilityEffect } from "@/composables/useVisibilityEffect.js";
 import Splitting from "splitting";
 
-const pageTitle = ref('О компании');
+const pageTitle = ref('О компании | Геотехзащита');
 
 useVisibilityEffect('.reveal');
 useVisibilityEffect('[data-splitting]');
