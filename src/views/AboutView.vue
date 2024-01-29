@@ -427,6 +427,13 @@ onMounted(() => {
   padding: 16px 0;
   border-top: 1px solid var(--dark-blue);
   border-bottom: 1px solid var(--dark-blue);
+  background-color: transparent;
+  transition: background-color 125ms, padding 275ms;
+}
+
+.license:hover {
+  background-color: var(--dark-blue-10);
+  padding: 16px;
 }
 
 .license.visible {
@@ -462,17 +469,26 @@ onMounted(() => {
   .license {
     padding: 20px 0;
   }
+  .license:hover {
+     padding: 20px;
+   }
 }
 
 @media (min-width: 1440px) {
   .license {
     padding: 30px 0;
   }
+  .license:hover {
+    padding: 30px;
+  }
 }
 
 @media (min-width: 1920px) {
   .license {
     padding: 40px 0;
+  }
+  .license:hover {
+    padding: 40px;
   }
 }
 

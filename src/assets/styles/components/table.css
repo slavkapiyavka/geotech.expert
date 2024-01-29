@@ -52,6 +52,7 @@ tbody tr:hover td:first-of-type {
 
 tbody tr:hover td:last-of-type::after {
     opacity: 1;
+    transform: translateX(0);
 }
 
 tbody td {
@@ -63,7 +64,7 @@ tbody td {
     font-weight: var(--regular-font-weight);
     line-height: var(--font-text2-line-height);
     letter-spacing: var(--font-text2-letter-spacing);
-    transition: padding-left 125ms, transform 125ms;
+    transition: padding-left 275ms, transform 275ms;
 }
 
 tbody td:last-of-type::after {
@@ -71,7 +72,8 @@ tbody td:last-of-type::after {
     position: absolute;
     right: 15px;
     opacity: 0;
-    transition: opacity 125ms;
+    transition: opacity 275ms, transform 275ms;
+    transform: translateX(-10px);
 }
 
 @media (min-width: 1440px) {
