@@ -430,22 +430,26 @@ onMounted(() => {
 }
 
 .license.visible {
-  animation: easeOutElastic 750ms forwards;
+  animation: easeOutElastic 1450ms both;
 }
 
 @keyframes easeOutElastic {
   0% {
     opacity: 0;
-    transform: translateX(16px);
-  }
-
-  25% {
-    transform: translateX(-10px);
+    transform: translateX(36px);
   }
 
   50% {
+    transform: translateX(-10px);
+  }
+
+  65% {
+    transform: translateX(8px);
+  }
+
+  80% {
     opacity: 1;
-    transform: translateX(6px);
+    transform: translateX(-6px);
   }
 
   100% {
