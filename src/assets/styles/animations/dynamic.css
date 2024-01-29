@@ -37,11 +37,11 @@
     }
 }
 
-.animated-title {
+[data-splitting] {
     opacity: 0;
 }
 
-.animated-title.visible {
+[data-splitting].visible {
     opacity: 1;
 }
 
