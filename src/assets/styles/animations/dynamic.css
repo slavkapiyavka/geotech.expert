@@ -1,0 +1,50 @@
+/*.splitting .char {*/
+/*    animation: slide-in 125ms cubic-bezier(0.75, 0, 0.25, 1) both;*/
+/*    animation-delay: calc(30ms + (0.015s * var(--char-index)));*/
+/*}*/
+
+/*@keyframes slide-in {*/
+/*    from {*/
+/*        transform: translateY(30px) scale(0.5);*/
+/*        opacity: 0;*/
+/*    }*/
+/*}*/
+
+/*.splitting span {*/
+/*    display: inline-block;*/
+/*    white-space: pre;*/
+/*}*/
+
+/*.splitting {*/
+/*    overflow: hidden;*/
+/*}*/
+
+.visible .char {
+    position: relative;
+    animation: slide-up 0.25s cubic-bezier(0.75, 0, 0.25, 1) both;
+    /*animation-delay: calc(1s + (0.25s * var(--word-index)));*/
+    animation-delay: calc(0.015s * var(--char-index));
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translate(0%, 10%) translate3d(0px, 0px, 0px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0%, 0%) translate3d(0px, 0px, 0px);
+    }
+}
+
+.animated-title {
+    opacity: 0;
+}
+
+.animated-title.visible {
+    opacity: 1;
+}
+
+.moving {
+    transition: transform 0.025s ease-in-out;
+}

@@ -1,6 +1,6 @@
 <script setup>
 import { useRoute } from "vue-router";
-import { computed } from "vue";
+import {computed} from "vue";
 import ContactsLayout from "@/layouts/ContactsLayout.vue";
 import BaseLayout from "@/layouts/BaseLayout.vue";
 import NotFoundLayout from "@/layouts/NotFoundLayout.vue";

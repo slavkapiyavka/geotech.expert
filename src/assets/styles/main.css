@@ -5,6 +5,7 @@
 @import "variables/geometry.css";
 @import "variables/colors.css";
 @import "animations/reveal.css";
+@import "animations/dynamic.css";
 @import "components/container.css";
 @import "components/hamburger.css";
 @import "components/buttons.css";
@@ -19,3 +20,5 @@
 @import "blocks/hero-about.css";
 @import "blocks/hero-engineering.css";
 @import "blocks/introduction.css";
+@import "splitting/dist/splitting.css";
+@import "splitting/dist/splitting-cells.css";

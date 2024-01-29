@@ -1,27 +1,36 @@
 <script setup lang="js">
 import {nextTick, onMounted, onUnmounted, ref} from "vue";
+import Splitting from 'splitting';
+import { useMovingEffect } from "@/composables/useMovingEffect.js";
 
 const textarea = ref(null)
 const listElements = ref([])
+const animatedTitles = ref([])
+const movingElements = ref([])
 
 const adjustTextareaHeight = () => {
   nextTick(() => {
     if(textarea.value) {
-      console.log(textarea.value.style)
       textarea.value.style.height = 'auto';
       textarea.value.style.height = `${textarea.value.scrollHeight + 1}px`;
     }
   })
 }
 
+useMovingEffect();
+
 onMounted(() => {
+  Splitting();
+
   if (textarea.value) {
     adjustTextareaHeight();
   }
 
   listElements.value = document.querySelectorAll('.animated-underline');
+  animatedTitles.value = document.querySelectorAll('.animated-title');
+  movingElements.value = document.querySelectorAll('.moving');
 
-  const underlineObserver = new IntersectionObserver((entries) => {
+  const visibilityObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
@@ -32,13 +41,22 @@ onMounted(() => {
   }, { threshold: 0.1 });
 
   listElements.value.forEach((element) => {
-    underlineObserver.observe(element);
+    visibilityObserver.observe(element);
   });
+
+  animatedTitles.value.forEach((element) => {
+    visibilityObserver.observe(element);
+  })
 
   onUnmounted(() => {
     listElements.value.forEach((element) => {
-      underlineObserver.unobserve(element);
+      visibilityObserver.unobserve(element);
     })
+
+    animatedTitles.value.forEach((element) => {
+      visibilityObserver.unobserve(element);
+    })
+
   })
 });
 </script>
@@ -66,8 +84,8 @@ onMounted(() => {
   </div>
 
   <div class="introduction-wrapper">
-    <section class="introduction index container">
-      <h2 class="introduction__title quote">Мы работаем с заказчиками <span class="text-break"></span>на всей территории россии и стран СНГ</h2>
+    <section class="introduction index container moving">
+      <h2 class="introduction__title animated-title" data-splitting>Мы работаем с заказчиками <span class="text-break"></span>на всей территории россии и стран СНГ</h2>
     </section>
   </div>
 
@@ -130,7 +148,7 @@ onMounted(() => {
 
   <div class="knowledge-wrapper background-color-white">
     <section class="knowledge container">
-      <h2 class="knowledge__title">
+      <h2 class="knowledge__title animated-title" data-splitting>
         Обширный банк знаний о применении <span class="color-orange">современных материалов</span> в строительстве
       </h2>
 
@@ -236,7 +254,7 @@ onMounted(() => {
   </div>
 
   <div class="contact-form-wrapper" id="contactForm">
-    <section class="contact-form container" aria-labelledby="contact-form-header">
+    <section class="contact-form container moving" aria-labelledby="contact-form-header">
       <h2 id="contact-form-title" class="contact-form__title heading-second">Оставьте заявку</h2>
       <p class="contact-form__description font-text2">Наш менеджер свяжется с вами в течении 24 часов</p>
 
