@@ -3,10 +3,10 @@ import RequestFormComponent from "@/components/RequestFormComponent.vue";
 import BreadcrumbsComponent from "@/components/BreadcrumbsComponent.vue";
 import {onMounted, ref} from "vue";
 
-const pageTitle = ref('Проектирование | Геотехзащита');
+const pageTitle = ref('Проектирование');
 
 onMounted(() => {
-  document.title = pageTitle.value;
+  document.title = `${pageTitle.value} | Геотехзащита`;
 })
 </script>
 

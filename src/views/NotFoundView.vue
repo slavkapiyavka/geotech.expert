@@ -1,10 +1,10 @@
 <script setup>
 import { onMounted, ref } from "vue";
 
-const pageTitle = ref('Страница не найдена | Геотехзащита');
+const pageTitle = ref('Страница не найдена');
 
 onMounted(() => {
-  document.title = pageTitle.value;
+  document.title = `${pageTitle.value} | Геотехзащита`;
 })
 </script>
 

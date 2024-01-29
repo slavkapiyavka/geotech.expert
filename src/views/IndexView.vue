@@ -4,7 +4,7 @@ import { useMovingEffect } from "@/composables/useMovingEffect.js";
 import { useVisibilityEffect } from "@/composables/useVisibilityEffect.js";
 import Splitting from 'splitting';
 
-const pageTitle = ref('Главная | Геотехзащита')
+const pageTitle = ref('Главная')
 const textarea = ref(null)
 const listElements = ref([])
 const animatedTitles = ref([])
@@ -35,7 +35,7 @@ watchEffect(() => {
 })
 
 onMounted(() => {
-  document.title = pageTitle.value;
+  document.title = `${pageTitle.value} | Геотехзащита`;
   listElements.value = document.querySelectorAll('.animated-underline');
   animatedTitles.value = document.querySelectorAll('.animated-title');
   movingElements.value = document.querySelectorAll('.moving');

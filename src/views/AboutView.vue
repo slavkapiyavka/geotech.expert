@@ -5,13 +5,13 @@ import { onMounted, ref } from 'vue';
 import { useVisibilityEffect } from "@/composables/useVisibilityEffect.js";
 import Splitting from "splitting";
 
-const pageTitle = ref('О компании | Геотехзащита');
+const pageTitle = ref('О компании');
 
 useVisibilityEffect('.reveal');
 useVisibilityEffect('[data-splitting]');
 
 onMounted(() => {
-  document.title = pageTitle.value;
+  document.title = `${pageTitle.value} | Геотехзащита`;
   Splitting({ by: 'lines' });
 });
 </script>
