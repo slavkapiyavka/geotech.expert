@@ -1,7 +1,8 @@
 <script setup lang="js">
 import {nextTick, onMounted, onUnmounted, ref, watchEffect} from "vue";
-import Splitting from 'splitting';
 import { useMovingEffect } from "@/composables/useMovingEffect.js";
+import { useVisibilityEffect } from "@/composables/useVisibilityEffect.js";
+import Splitting from 'splitting';
 
 const textarea = ref(null)
 const listElements = ref([])
@@ -24,6 +25,9 @@ const adjustTextareaHeight = () => {
 }
 
 useMovingEffect();
+
+useVisibilityEffect('.animated-underline');
+useVisibilityEffect('[data-splitting]');
 
 watchEffect(() => {
   updateTextBasedOnLang();
@@ -52,33 +56,7 @@ onMounted(() => {
     attributes: true,
   });
 
-  const visibilityObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  listElements.value.forEach((element) => {
-    visibilityObserver.observe(element);
-  });
-
-  animatedTitles.value.forEach((element) => {
-    visibilityObserver.observe(element);
-  })
-
   onUnmounted(() => {
-    listElements.value.forEach((element) => {
-      visibilityObserver.unobserve(element);
-    })
-
-    animatedTitles.value.forEach((element) => {
-      visibilityObserver.unobserve(element);
-    })
-
     translationObserver.disconnect();
   })
 });
