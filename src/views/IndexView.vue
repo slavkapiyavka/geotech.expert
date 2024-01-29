@@ -1,5 +1,5 @@
 <script setup lang="js">
-import {nextTick, onMounted, onUnmounted, ref} from "vue";
+import {nextTick, onMounted, onUnmounted, ref, watchEffect} from "vue";
 import Splitting from 'splitting';
 import { useMovingEffect } from "@/composables/useMovingEffect.js";
 
@@ -7,6 +7,12 @@ const textarea = ref(null)
 const listElements = ref([])
 const animatedTitles = ref([])
 const movingElements = ref([])
+const mainTitle = ref('Геотехзащита')
+
+const updateTextBasedOnLang = () => {
+  const lang = document.documentElement.lang; // Получаем текущее значение атрибута lang
+  mainTitle.value = lang === 'ru' ? 'Геотехзащита' : 'Geotechprotect';
+};
 
 const adjustTextareaHeight = () => {
   nextTick(() => {
@@ -19,6 +25,10 @@ const adjustTextareaHeight = () => {
 
 useMovingEffect();
 
+watchEffect(() => {
+  updateTextBasedOnLang();
+})
+
 onMounted(() => {
   Splitting();
 
@@ -29,6 +39,18 @@ onMounted(() => {
   listElements.value = document.querySelectorAll('.animated-underline');
   animatedTitles.value = document.querySelectorAll('.animated-title');
   movingElements.value = document.querySelectorAll('.moving');
+
+  const translationObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === 'lang') {
+        updateTextBasedOnLang();
+      }
+    });
+  });
+
+  translationObserver.observe(document.documentElement, {
+    attributes: true,
+  });
 
   const visibilityObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -57,6 +79,7 @@ onMounted(() => {
       visibilityObserver.unobserve(element);
     })
 
+    translationObserver.disconnect();
   })
 });
 </script>
@@ -65,7 +88,7 @@ onMounted(() => {
   <div class="hero-wrapper background-color-white">
     <section class="hero index container">
       <span class="hero__decorative-title">Проектный инжиниринг</span>
-      <h1 class="hero__title decoration-line">Геотехзащита</h1>
+      <h1 class="hero__title decoration-line" translate="no">{{ mainTitle }}</h1>
       <p class="hero__subtitle">Проектирование под ключ, на основе технического задания и действующих нормативных
         документов </p>
 
