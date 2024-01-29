@@ -9,7 +9,7 @@ export function useMovingEffect() {
             const elementCenter = rect.top + rect.height / 2;
             const viewportCenter = viewportHeight / 2;
             const normalizedPosition = (elementCenter - viewportCenter) / viewportHeight;
-            const translateY = normalizedPosition * 100;
+            const translateY = normalizedPosition * 30;
             element.style.transform = `translateY(${translateY}px)`;
         });
     };

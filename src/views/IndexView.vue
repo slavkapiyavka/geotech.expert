@@ -30,7 +30,7 @@ watchEffect(() => {
 })
 
 onMounted(() => {
-  Splitting();
+  Splitting({ by: 'lines' });
 
   if (textarea.value) {
     adjustTextareaHeight();
@@ -108,7 +108,7 @@ onMounted(() => {
 
   <div class="introduction-wrapper">
     <section class="introduction index container moving">
-      <h2 class="introduction__title animated-title" data-splitting>Мы работаем с заказчиками <span class="text-break"></span>на всей территории россии и стран СНГ</h2>
+      <h2 class="introduction__title animated-title" data-splitting>Мы работаем с заказчиками на всей территории россии и стран СНГ</h2>
     </section>
   </div>
 
