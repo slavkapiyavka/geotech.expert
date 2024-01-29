@@ -29,10 +29,11 @@ const toggleMobileMenu = () => {
 
 const handleScroll = () => {
   const currentScrollY = window.scrollY;
+  const scrollOnTop = document.documentElement.scrollTop === 0 || window.pageYOffset === 0;
 
-  if(lastScrollY - currentScrollY > 10) {
+  if(lastScrollY - currentScrollY > 6) {
     isSticky.value = true;
-  } else if(currentScrollY - lastScrollY > 0) {
+  } else if(scrollOnTop || currentScrollY - lastScrollY > 6) {
     isSticky.value = false;
   }
 
@@ -171,6 +172,7 @@ onUnmounted(() => {
 
 .main-header-wrapper_sticky {
   top: 0;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
 }
 
 .main-header__logo {
