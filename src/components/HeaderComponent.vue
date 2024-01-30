@@ -53,7 +53,7 @@ onUnmounted(() => {
   <div class="main-header-wrapper" :class="{ 'main-header-wrapper_sticky': isSticky }" ref="headerRef">
     <header class="main-header container">
       <div class="main-header__logo">
-        <a href="/">
+        <router-link :to="'/'">
           <svg
             v-if="!showCompactLogo"
             class="big-icon"
@@ -115,7 +115,7 @@ onUnmounted(() => {
               fill="#B08C8B"
             />
           </svg>
-        </a>
+        </router-link>
       </div>
       <div
         class="main-nav-mobile-wrapper"
@@ -284,10 +284,6 @@ onUnmounted(() => {
   word-wrap: break-word;
 }
 
-.main-nav__link_active {
-  color: var(--dark-blue);
-}
-
 @media (min-width: 768px) {
   .main-nav {
     flex: initial;
@@ -313,6 +309,10 @@ onUnmounted(() => {
     font-family: var(--font-nevermind-compact);
     color: var(--dark-blue-75);
   }
+}
+
+.main-nav__link_active {
+  color: var(--dark-blue);
 }
 
 .main-nav-mobile-wrapper {
