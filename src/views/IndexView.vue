@@ -198,7 +198,7 @@ onMounted(() => {
   </div>
 
   <div class="stages-wrapper">
-    <section class="stages container">
+    <section class="stages container moving">
       <h2 class="stages__title heading-second">Этапы проектирования</h2>
 
       <ul class="stages-list">
@@ -257,7 +257,7 @@ onMounted(() => {
   </div>
 
   <div class="contact-form-wrapper" id="contactForm">
-    <section class="contact-form container moving" aria-labelledby="contact-form-header">
+    <section class="contact-form container" aria-labelledby="contact-form-header">
       <h2 id="contact-form-title" class="contact-form__title heading-second">Оставьте заявку</h2>
       <p class="contact-form__description font-text2">Наш менеджер свяжется с вами в течении 24 часов</p>
 

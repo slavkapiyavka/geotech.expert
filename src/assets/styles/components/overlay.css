@@ -1,0 +1,28 @@
+.contents {
+    display: contents;
+}
+
+#page-overlay {
+    display: contents;
+}
+
+#page-overlay::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #17425A;
+    z-index: 9999;
+    transform: translateY(100%);
+    transition: transform 500ms ease-in-out;
+}
+
+#page-overlay.visible::after {
+    transform: translateY(0%);
+}
+
+#page-overlay.initial::after {
+    transform: translateY(-100%);
+}

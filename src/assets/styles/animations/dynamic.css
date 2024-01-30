@@ -46,5 +46,5 @@
 }
 
 .moving {
-    transition: transform 0.025s ease-in-out;
+    /*transition: transform 0.025s ease-in-out;*/
 }
