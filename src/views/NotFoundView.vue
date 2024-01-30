@@ -26,7 +26,7 @@ onMounted(() => {
 
   <main class="not-found-page container">
     <h2 class="not-found-page__title">Такая страница не найдена</h2>
-    <router-link :to="{ name: 'index'}" class="primary-button not-found-page__button">
+    <router-link :to="{ name: 'index'}" class="primary-button not-found-page__button" v-follow-mouse>
       На главную
     </router-link>
     <div class="not-found-page__decorative"></div>

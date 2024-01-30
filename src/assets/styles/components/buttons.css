@@ -25,6 +25,7 @@
     .primary-button:focus-visible {
         background-color: var(--white);
         color: var(--dark-blue);
+        box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
     }
 }
 
@@ -96,7 +97,7 @@
 
 .share-button {
     --share-button-size: 40px;
-    
+
     display: grid;
     place-items: center;
     width: var(--share-button-size);

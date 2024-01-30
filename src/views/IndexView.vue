@@ -80,7 +80,7 @@ onMounted(() => {
         <img width="150" height="190" class="hero__image" src="../assets/images/pages/index/hero-375.png" alt="Изображение строительной техники" loading="lazy">
       </picture>
 
-      <a href="#contactForm" class="primary-button primary-button_orange">Начать проект</a>
+      <a href="#contactForm" class="primary-button primary-button_orange" v-follow-mouse>Начать проект</a>
 
       <div class="background-shape index"></div>
     </section>
@@ -93,8 +93,8 @@ onMounted(() => {
   </div>
 
   <div class="activity-wrapper">
-    <section class="activity container">
-      <h2 class="activity__title">Направления деятельности</h2>
+    <section class="activity container moving">
+      <h2 class="activity__title" data-splitting>Направления деятельности</h2>
 
       <ul class="directions-list">
         <li class="directions-list__element animated-underline">
@@ -145,7 +145,7 @@ onMounted(() => {
         </li>
       </ul>
 
-      <a href="/projects" class="primary-button primary-button_orange">Смотреть проекты</a>
+      <a href="/projects" class="primary-button primary-button_orange" v-follow-mouse>Смотреть проекты</a>
     </section>
   </div>
 
@@ -171,7 +171,7 @@ onMounted(() => {
   </div>
 
   <div class="advantages-wrapper">
-    <section class="advantages container">
+    <section class="advantages container moving">
       <h2 class="advantages__title">Почему с нами работают?</h2>
       <ul class="advantages-list">
         <li class="advantages-list-element">
@@ -213,7 +213,7 @@ onMounted(() => {
         </li>
       </ul>
 
-      <a href="/engineering" class="primary-button primary-button_orange">Проектирование</a>
+      <a href="/engineering" class="primary-button primary-button_orange" v-follow-mouse>Проектирование</a>
     </section>
   </div>
 
@@ -252,7 +252,7 @@ onMounted(() => {
         </article>
       </div>
 
-      <a class="primary-button primary-button_orange" href="/blog">Все статьи</a>
+      <a class="primary-button primary-button_orange" href="/blog" v-follow-mouse>Все статьи</a>
     </section>
   </div>
 
@@ -1057,19 +1057,73 @@ onMounted(() => {
 }
 
 .article-preview__link {
+  width: fit-content;
+  position: relative;
   font-family: var(--font-nevermind-compact);
   font-size: var(--font-button2-size);
   font-weight: var(--regular-font-weight);
   line-height: var(--font-button2-line-height);
   letter-spacing: var(--font-button2-letter-spacing);
-  color: var(--dark-blue);
   text-transform: uppercase;
-  text-underline-offset: 4px;
+  color: var(--dark-blue);
   transition: color 125ms;
+  text-decoration: none;
+}
+
+.article-preview__link::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  bottom: -4px;
+  right: 0;
+  left: 0;
+  background-color: currentColor;
 }
 
 .article-preview__link:hover {
   color: var(--orange);
+}
+
+.article-preview__link:hover::after {
+  animation: underlineMove 750ms both;
+}
+
+@keyframes underlineMove {
+  from {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+  25% {
+    left: 100%;
+    right: 0;
+    opacity: 1;
+  }
+  26% {
+    left: 100%;
+    right: 0;
+    opacity: 0;
+  }
+  27% {
+    left: 0;
+    right: 100%;
+    opacity: 0;
+  }
+  28% {
+    left: 0;
+    right: 100%;
+    opacity: 1;
+  }
+  29% {
+    left: 0;
+    right: 100%;
+    opacity: 1;
+  }
+  to {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
 }
 
 .contact-form {
