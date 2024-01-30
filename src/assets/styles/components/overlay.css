@@ -13,7 +13,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #17425A;
+    background: #17425A url("../../images/main-logo-icon.svg") center / 64px no-repeat;
     z-index: 9999;
     transform: translateY(100%);
     transition: transform 500ms ease-in-out;
