@@ -146,8 +146,8 @@ onMounted(() => {
 
 @media (min-width: 1920px) {
   .not-found-page__decorative {
-    min-width: 1156px;
-    height: 898px;
+    min-width: 945px;
+    height: 734px;
   }
 }
 </style>

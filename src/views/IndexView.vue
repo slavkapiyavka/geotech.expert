@@ -204,13 +204,13 @@ onMounted(() => {
       <h2 class="stages__title heading-second">Этапы проектирования</h2>
 
       <ul class="stages-list">
-        <li class="stages-list__stage stages-list__stage_white">
+        <li class="stages-list__stage stages-list__stage_white" v-follow-mouse>
           <span class="heading-fifth">Эскизные решения</span>
         </li>
-        <li class="stages-list__stage stages-list__stage_dark-blue">
+        <li class="stages-list__stage stages-list__stage_dark-blue" v-follow-mouse>
           <span class="heading-fifth">Проектная документация</span>
         </li>
-        <li class="stages-list__stage stages-list__stage_orange">
+        <li class="stages-list__stage stages-list__stage_orange" v-follow-mouse>
           <span class="heading-fifth">Рабочая документация</span>
         </li>
       </ul>
@@ -787,6 +787,22 @@ onMounted(() => {
 @media (min-width: 768px) {
   .advantages-list-element {
     max-width: 94%;
+    padding-left: 12px;
+    padding-bottom: 100px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .advantages-list-element {
+    padding-left: 18px;
+    padding-bottom: 130px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .advantages-list-element {
+    padding-left: 24px;
+    padding-bottom: 232px;
   }
 }
 
@@ -894,20 +910,18 @@ onMounted(() => {
 @media (min-width: 768px) {
   .stages-list {
     flex-direction: row;
-    margin-bottom: 100px;
+    margin-bottom: 0;
   }
 }
 
 @media (min-width: 1440px) {
   .stages-list {
-    margin-bottom: 140px;
     padding: 0 7px;
   }
 }
 
 @media (min-width: 1920px) {
   .stages-list {
-    margin-bottom: 180px;
     padding: 0 20px;
   }
 }

@@ -120,6 +120,20 @@
     grid-area: subtitle;
 }
 
+.hero__subtitle_cooperation {
+    max-width: 46ch;
+}
+
+.hero__subtitle_engineering {
+    max-width: 44ch;
+}
+
+@media (min-width: 768px) {
+    .hero__subtitle_engineering {
+        max-width: 46ch;
+    }
+}
+
 .hero__description,
 .hero__subtitle {
     font-family: var(--font-nevermind-compact);

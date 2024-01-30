@@ -16,7 +16,7 @@ onMounted(() => {
   <div class="hero-container background-color-white">
     <section class="hero container">
       <h1 class="hero__title">Сотрудничество</h1>
-      <p class="hero__subtitle container__subtitle">
+      <p class="hero__subtitle container__subtitle hero__subtitle_cooperation">
         Работаем с заказчиками, подрядчиками, проектировщиками
       </p>
 

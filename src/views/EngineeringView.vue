@@ -23,7 +23,7 @@ useVisibilityEffect('[data-splitting]');
   <div class="hero-container background-color-white">
     <section class="hero engineering container">
       <h1 class="hero__title">Проектирование</h1>
-      <p class="hero__subtitle">
+      <p class="hero__subtitle hero__subtitle_engineering">
         Выполнение полного спектра услуг для строительства или реконструкции объектов
       </p>
 
@@ -347,9 +347,20 @@ useVisibilityEffect('[data-splitting]');
   display: grid;
   gap: 40px;
 }
+@media (min-width: 1440px) {
+  .surveys {
+    gap: 60px;
+  }
+}
+@media (min-width: 1920px) {
+  .surveys {
+    gap: 80px;
+  }
+}
 .surveys__title {
   width: -moz-min-content;
   width: min-content;
+  margin: 0;
 }
 @media (min-width: 768px) {
   .surveys__title {
@@ -372,6 +383,7 @@ useVisibilityEffect('[data-splitting]');
 @media (min-width: 1440px) {
   .surveys-list {
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-auto-flow: row;
   }
 }
@@ -679,14 +691,21 @@ useVisibilityEffect('[data-splitting]');
   margin: 0 0 40px;
   max-width: 42ch;
 }
+@media (min-width: 768px) {
+  .project-documentation__subtitle {
+    margin-bottom: 60px;
+  }
+}
 @media (min-width: 1440px) {
   .project-documentation__subtitle {
     max-width: 40ch;
+    margin-bottom: 80px;
   }
 }
 @media (min-width: 1920px) {
   .project-documentation__subtitle {
     max-width: 41ch;
+    margin-bottom: 100px;
   }
 }
 .project-documentation-decorative {

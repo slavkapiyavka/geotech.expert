@@ -287,7 +287,20 @@ onMounted(() => {
   font-weight: var(--regular-font-weight);
   line-height: var(--font-text1-line-height);
   letter-spacing: var(--font-text1-letter-spacing);
-  margin: 0 0 40px 0;
+  margin: 0 0 40px;
+  max-width: 32ch;
+}
+
+@media (min-width: 1440px) {
+  .engineering__subtitle {
+    margin: 0 0 60px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .engineering__subtitle {
+    margin: 0 0 80px;
+  }
 }
 
 .engineering-list {
