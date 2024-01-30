@@ -3,13 +3,15 @@ import {nextTick, onMounted, onUnmounted, ref, watchEffect} from "vue";
 import { useMovingEffect } from "@/composables/useMovingEffect.js";
 import { useVisibilityEffect } from "@/composables/useVisibilityEffect.js";
 import Splitting from 'splitting';
+import {useParallax} from "@/composables/useParallax.js";
 
 const pageTitle = ref('Главная')
-const textarea = ref(null)
+const mainTitle = ref('Геотехзащита')
 const listElements = ref([])
 const animatedTitles = ref([])
 const movingElements = ref([])
-const mainTitle = ref('Геотехзащита')
+const textarea = ref(null)
+const { followedElement } = useParallax();
 
 const updateTextBasedOnLang = () => {
   const lang = document.documentElement.lang;
@@ -165,7 +167,7 @@ onMounted(() => {
           <span class="text heading-fifth">проектов на стадии <br/> реализации</span>
         </p>
 
-        <div class="knowledge__image" id="knowledgeImage"></div>
+        <div ref="followedElement" class="knowledge__image" id="knowledgeImage"></div>
       </div>
     </section>
   </div>
