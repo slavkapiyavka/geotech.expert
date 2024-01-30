@@ -10,7 +10,7 @@ export function useVisibilityEffect(query) {
             });
         }, {
             rootMargin: '0px',
-            threshold: 0.1
+            threshold: 0.15
         });
 
         const elements = document.querySelectorAll(query);
