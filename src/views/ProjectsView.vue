@@ -2,8 +2,11 @@
 import RequestFormComponent from "@/components/RequestFormComponent.vue";
 import BreadcrumbsComponent from "@/components/BreadcrumbsComponent.vue";
 import { onMounted, ref } from "vue";
+import {useVisibilityEffect} from "@/composables/useVisibilityEffect.js";
 
 const pageTitle = ref('Проекты');
+
+useVisibilityEffect('.reveal');
 
 onMounted(() => {
   document.title = `${pageTitle.value} | Геотехзащита`;
@@ -15,8 +18,8 @@ onMounted(() => {
 
   <div class="hero-container background-color-white">
     <section class="hero container">
-      <h1 class="hero__title">Проекты</h1>
-      <nav class="tabs-nav">
+      <h1 class="hero__title reveal reveal_left">Проекты</h1>
+      <nav class="tabs-nav reveal reveal_left">
         <button class="tab tab_active">2023</button>
         <button class="tab">2022</button>
         <button class="tab">2021</button>
