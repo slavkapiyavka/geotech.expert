@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { globalStore } from "@/store.js";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,15 +43,20 @@ const router = createRouter({
       name: 'notFound',
       component: () => import('../views/NotFoundView.vue')
     }
-  ]
-})
-
-router.beforeEach((to, from, next) => {
-  if (globalStore.isMenuOpen) {
-    globalStore.isMenuOpen = false;
-    document.body.classList.remove('no-scroll');
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({ el: to.hash });
+        }, 500);
+      });
+    } else if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { top: 0 };
+    }
   }
-  next();
 })
 
 export default router

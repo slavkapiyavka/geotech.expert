@@ -4,6 +4,7 @@ import { computed, ref } from 'vue'
 import ContactsLayout from '@/layouts/ContactsLayout.vue'
 import BaseLayout from '@/layouts/BaseLayout.vue'
 import NotFoundLayout from '@/layouts/NotFoundLayout.vue'
+import { globalStore } from "@/store.js";
 
 const isOverlayVisible = ref(false)
 const overlayDelay = 2000
@@ -21,12 +22,21 @@ const layout = computed(() => {
 })
 
 router.beforeEach((to, from, next) => {
-  isOverlayVisible.value = true
-  document.documentElement.classList.add('no-scroll')
-  document.body.setAttribute('inert', '')
-  setTimeout(() => {
-    next()
-  }, 500)
+  if (globalStore.isMenuOpen) {
+    globalStore.isMenuOpen = false;
+    document.body.classList.remove('no-scroll');
+  }
+
+  if(!to.hash) {
+    isOverlayVisible.value = true
+    document.documentElement.classList.add('no-scroll')
+    document.body.setAttribute('inert', '')
+    setTimeout(() => {
+      next()
+    }, 500)
+  } else {
+    next();
+  }
 })
 
 router.afterEach(() => {
