@@ -21,8 +21,8 @@ onMounted(() => {
 
   <div class="hero-container background-color-white">
     <section class="hero about container">
-      <h1 class="hero__title">О компании</h1>
-      <p class="hero__subtitle">
+      <h1 class="hero__title reveal reveal_left">О компании</h1>
+      <p class="hero__subtitle reveal reveal_left">
         Проектирование с использованием новейших технологий, подтвержденных на практике
       </p>
       <div class="background-shape about"></div>
@@ -52,7 +52,7 @@ onMounted(() => {
 
   <div class="engineering-wrapper">
     <section class="engineering container">
-      <h2 class="engineering__title">Грамотное проектирование</h2>
+      <h2 class="engineering__title" data-splitting>Грамотное проектирование</h2>
       <p class="engineering__subtitle">Применение современных материалов и технологий позволяет:</p>
 
       <ul class="engineering-list">
@@ -78,7 +78,7 @@ onMounted(() => {
 
   <div class="licenses-wrapper background-color-white">
     <section class="licenses container">
-      <h2 class="licenses__title">Лицензия</h2>
+      <h2 class="licenses__title" data-splitting>Лицензия</h2>
       <p class="licenses__description">
         У нас есть все необходимые допуски СРО для осуществления профессиональной деятельности
       </p>
@@ -101,6 +101,10 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.licenses {
+  overflow-x: hidden;
+}
+
 .licenses__title {
   margin: 0 0 8px 0;
   font-family: var(--font-bebas-neue);
