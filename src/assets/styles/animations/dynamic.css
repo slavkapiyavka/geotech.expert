@@ -45,6 +45,10 @@
     opacity: 1;
 }
 
-.moving {
-    /*transition: transform 0.025s ease-in-out;*/
+.whitespace {
+    display: contents;
+}
+
+.whitespace::after {
+    content: " ";
 }
