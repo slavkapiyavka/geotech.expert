@@ -2,8 +2,11 @@
 import RequestFormComponent from "@/components/RequestFormComponent.vue";
 import BreadcrumbsComponent from "@/components/BreadcrumbsComponent.vue";
 import {onMounted, ref} from "vue";
+import { useVisibilityEffect } from "@/composables/useVisibilityEffect.js";
 
 const pageTitle = ref('Сотрудничество');
+
+useVisibilityEffect('[data-splitting]');
 
 onMounted(() => {
   document.title = `${pageTitle.value} | Геотехзащита`;
@@ -26,7 +29,7 @@ onMounted(() => {
 
   <div class="introduction-wrapper">
     <section class="introduction cooperation container">
-      <h2 class="introduction__title">Отрасли объектов проектирования</h2>
+      <h2 class="introduction__title" data-splitting>Отрасли объектов проектирования</h2>
 
       <ul class="introduction-list">
         <li class="introduction-list__element">

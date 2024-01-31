@@ -30,6 +30,7 @@ const adjustTextareaHeight = () => {
 useMovingEffect();
 
 useVisibilityEffect('.animated-underline');
+useVisibilityEffect('.reveal');
 useVisibilityEffect('[data-splitting]');
 
 watchEffect(() => {
@@ -69,12 +70,12 @@ onMounted(() => {
 <template>
   <div class="hero-wrapper background-color-white">
     <section class="hero index container">
-      <span class="hero__decorative-title">Проектный инжиниринг</span>
-      <h1 class="hero__title decoration-line" translate="no">{{ mainTitle }}</h1>
-      <p class="hero__subtitle">Проектирование под ключ, на основе технического задания и действующих нормативных
+      <span class="hero__decorative-title reveal reveal_top">Проектный инжиниринг</span>
+      <h1 class="hero__title decoration-line reveal reveal_left" translate="no">{{ mainTitle }}</h1>
+      <p class="hero__subtitle reveal reveal_left">Проектирование под ключ, на основе технического задания и действующих нормативных
         документов </p>
 
-      <picture class="hero__picture">
+      <picture class="hero__picture reveal reveal_bottom">
         <source srcset="../assets/images/pages/index/hero-1920.png" media="(min-width: 1920px)">
         <source srcset="../assets/images/pages/index/hero-1440.png" media="(min-width: 1440px)">
         <source srcset="../assets/images/pages/index/hero-1024.png" media="(min-width: 1024px)">
@@ -82,7 +83,9 @@ onMounted(() => {
         <img width="150" height="190" class="hero__image" src="../assets/images/pages/index/hero-375.png" alt="Изображение строительной техники" loading="lazy">
       </picture>
 
-      <a href="#contactForm" class="primary-button primary-button_orange" v-follow-mouse>Начать проект</a>
+      <div class="reveal reveal_left">
+        <a href="#contactForm" class="primary-button primary-button_orange" v-follow-mouse>Начать проект</a>
+      </div>
 
       <div class="background-shape index"></div>
     </section>
