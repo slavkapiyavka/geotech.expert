@@ -1,11 +1,20 @@
 <script setup>
+import { useVisibilityEffect } from "@/composables/useVisibilityEffect.js";
+import { onMounted } from "vue";
+import Splitting from "splitting";
+
+useVisibilityEffect('[data-splitting]');
+
+onMounted(() => {
+  Splitting({ by: 'lines' });
+})
 
 </script>
 
 <template>
   <div class="request-wrapper">
     <section class="request container">
-      <h2 class="request__title">
+      <h2 class="request__title" data-splitting>
         Оставить заявку на проект можно прямо на сайте
       </h2>
 
@@ -61,6 +70,9 @@
   height: 1px;
   vertical-align: middle;
   background-color: var(--white);
+}
+.visible.request__title::after {
+  animation: slideFromBottom 1200ms;
 }
 
 @media (min-width: 768px) {
