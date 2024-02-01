@@ -13,6 +13,7 @@ onMounted(() => {
   Splitting({ by: 'lines' })
 })
 
+useVisibilityEffect('.animated-underline');
 useVisibilityEffect('.work-documentation-list__element');
 useVisibilityEffect('[data-splitting]');
 </script>
@@ -72,7 +73,7 @@ useVisibilityEffect('[data-splitting]');
     </section>
   </div>
 
-  <div class="surveys-wrapper background-color-white">
+  <div class="surveys-wrapper background-color-white overlapped">
     <section class="surveys container">
       <h2 class="surveys__title container__title" data-splitting>Инженерные изыскания</h2>
 
@@ -217,17 +218,17 @@ useVisibilityEffect('[data-splitting]');
       </p>
 
       <ol class="expertise-list">
-        <li class="expertise-list__element">
+        <li class="expertise-list__element animated-underline">
           <span>
             Оперативное устранение замечаний
           </span>
         </li>
-        <li class="expertise-list__element">
+        <li class="expertise-list__element animated-underline">
           <span>
             Включение в работу нужных экспертов
           </span>
         </li>
-        <li class="expertise-list__element">
+        <li class="expertise-list__element animated-underline">
           <span>
             прохождение экспертизы проекта, выполненого сторонней проектной организацией
           </span>
@@ -791,6 +792,7 @@ useVisibilityEffect('[data-splitting]');
   list-style: none;
 }
 .expertise-list__element {
+  position: relative;
   margin: 0;
   text-transform: uppercase;
   font-family: var(--font-nevermind-compact);
@@ -802,10 +804,29 @@ useVisibilityEffect('[data-splitting]');
   align-items: flex-start;
   gap: 12px;
   padding: 20px 0;
-  border-bottom: 1px solid currentColor;
+}
+
+.expertise-list__element.animated-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: var(--dark-blue);
+  transition: width 1750ms ease-in;
+}
+.animated-underline:nth-child(2) {
+  transition-delay: 250ms;
+}
+.animated-underline:nth-child(3) {
+  transition-delay: 500ms;
+}
+.expertise-list__element.animated-underline.visible::after {
+  width: 100%;
 }
 .expertise-list__element::before {
   --ol-marker-size: 36px;
+
   content: "";
   display: block;
   margin-top: 4px;

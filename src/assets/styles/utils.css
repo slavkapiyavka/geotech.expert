@@ -74,3 +74,9 @@
     content: "\A";
     white-space: pre;
 }
+
+.overlapped {
+    position: sticky;
+    top: 0;
+    z-index: -1;
+}

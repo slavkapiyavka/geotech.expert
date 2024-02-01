@@ -29,7 +29,7 @@ onMounted(() => {
     </section>
   </div>
 
-  <div class="introduction-wrapper background-color-orange">
+  <div class="introduction-wrapper background-color-orange overlapped">
     <section class="introduction about container">
       <h2 class="introduction__title" data-splitting>
         Наша команда способна эффективно решать сложные задачи и создавать уникальные проекты для каждого клиента

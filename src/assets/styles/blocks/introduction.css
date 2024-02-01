@@ -78,8 +78,31 @@
     padding-left: 8px;
     padding-bottom: 20px;
     margin-left: 18px;
-    border-left: 1px solid var(--white);
     border-bottom: 1px solid var(--white);
+}
+
+.introduction-list::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    height: 0;
+    background-color: var(--white);
+}
+
+.introduction-list.visible::before {
+    height: 100%;
+    animation: revealBorderFromBottom 750ms ease-in-out both;
+}
+
+@keyframes revealBorderFromBottom {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
 }
 
 .introduction-list::after {

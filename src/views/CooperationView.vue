@@ -6,6 +6,7 @@ import { useVisibilityEffect } from "@/composables/useVisibilityEffect.js";
 
 const pageTitle = ref('Сотрудничество');
 
+useVisibilityEffect('.introduction-list');
 useVisibilityEffect('[data-splitting]');
 
 onMounted(() => {
@@ -27,7 +28,7 @@ onMounted(() => {
     </section>
   </div>
 
-  <div class="introduction-wrapper">
+  <div class="introduction-wrapper overlapped">
     <section class="introduction cooperation container">
       <h2 class="introduction__title" data-splitting>Отрасли объектов проектирования</h2>
 
