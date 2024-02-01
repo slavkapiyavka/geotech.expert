@@ -73,7 +73,7 @@ useVisibilityEffect('[data-splitting]');
     </section>
   </div>
 
-  <div class="surveys-wrapper background-color-white overlapped">
+  <div class="surveys-wrapper background-color-white" v-adjust-top>
     <section class="surveys container">
       <h2 class="surveys__title container__title" data-splitting>Инженерные изыскания</h2>
 

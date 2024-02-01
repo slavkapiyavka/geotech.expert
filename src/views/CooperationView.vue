@@ -28,7 +28,7 @@ onMounted(() => {
     </section>
   </div>
 
-  <div class="introduction-wrapper overlapped">
+  <div class="introduction-wrapper" v-adjust-top>
     <section class="introduction cooperation container">
       <h2 class="introduction__title" data-splitting>Отрасли объектов проектирования</h2>
 
