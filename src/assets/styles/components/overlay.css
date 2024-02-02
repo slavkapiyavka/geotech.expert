@@ -21,16 +21,8 @@
 
 #page-overlay.visible::after {
     transform: translateY(0%);
-    border-radius: 0;
-    animation: curvedOverlayBottom 500ms both;
 }
 
 #page-overlay.initial::after {
     transform: translateY(-100%);
-}
-
-@keyframes curvedOverlayBottom {
-    from {
-        border-radius: 0 0 30% 30%;
-    }
 }
