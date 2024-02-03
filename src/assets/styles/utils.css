@@ -76,12 +76,5 @@
 }
 
 .main-content > div {
-    position: relative;
-    z-index: 1;
-}
-
-.main-content > .overlapped {
-    position: sticky;
     z-index: 0;
 }
-

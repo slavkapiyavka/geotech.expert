@@ -154,7 +154,7 @@ onMounted(() => {
     </section>
   </div>
 
-  <div class="knowledge-wrapper background-color-white" v-floating-sticky>
+  <div class="knowledge-wrapper background-color-white" v-adjust-top>
     <section class="knowledge container">
       <h2 class="knowledge__title animated-title" data-splitting>
         Обширный банк знаний о применении <span class="color-orange">современных материалов</span> в строительстве
