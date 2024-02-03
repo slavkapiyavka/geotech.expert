@@ -75,8 +75,13 @@
     white-space: pre;
 }
 
-.overlapped {
-    position: sticky;
-    top: 0;
-    z-index: -1;
+.main-content > div {
+    position: relative;
+    z-index: 1;
 }
+
+.main-content > .overlapped {
+    position: sticky;
+    z-index: 0;
+}
+
