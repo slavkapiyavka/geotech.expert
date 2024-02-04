@@ -93,7 +93,7 @@
 
 .introduction-list.visible::before {
     height: 100%;
-    animation: revealBorderFromBottom 750ms ease-in-out both;
+    animation: revealBorderFromBottom 450ms ease-in-out both;
 }
 
 @keyframes revealBorderFromBottom {

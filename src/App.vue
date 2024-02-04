@@ -7,7 +7,7 @@ import NotFoundLayout from '@/layouts/NotFoundLayout.vue'
 import { globalStore } from "@/store.js";
 
 const isOverlayVisible = ref(false)
-const overlayDelay = 2000
+const overlayDelay = 1250
 const route = useRoute()
 const router = useRouter()
 
