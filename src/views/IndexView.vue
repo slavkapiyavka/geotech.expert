@@ -207,13 +207,13 @@ onMounted(() => {
       <h2 class="stages__title heading-second">Этапы проектирования</h2>
 
       <ul class="stages-list">
-        <li class="stages-list__stage stages-list__stage_white" v-follow-mouse>
+        <li class="stages-list__stage stages-list__stage_white">
           <span class="heading-fifth">Эскизные решения</span>
         </li>
-        <li class="stages-list__stage stages-list__stage_dark-blue" v-follow-mouse>
+        <li class="stages-list__stage stages-list__stage_dark-blue">
           <span class="heading-fifth">Проектная документация</span>
         </li>
-        <li class="stages-list__stage stages-list__stage_orange" v-follow-mouse>
+        <li class="stages-list__stage stages-list__stage_orange">
           <span class="heading-fifth">Рабочая документация</span>
         </li>
       </ul>
