@@ -318,7 +318,12 @@ onMounted(() => {
           </label>
         </div>
 
-        <button type="submit" class="contact-form__submit primary-button primary-button_orange">Отправить</button>
+        <button
+            type="submit"
+            class="contact-form__submit primary-button primary-button_orange"
+            v-follow-mouse>
+          Отправить
+        </button>
       </form>
     </section>
   </div>
