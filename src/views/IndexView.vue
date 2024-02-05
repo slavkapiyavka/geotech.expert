@@ -31,9 +31,12 @@ const adjustTextareaHeight = () => {
 const formatPhoneNumber = (event) => {
   let input = event.target.value.replace(/\D/g, '');
 
-  if (input.length > 1) {
-    input = '7' + input.substring(1);
+  if (input.startsWith('8') || input.startsWith('7')) {
+    input = input.substring(1);
   }
+
+  input = '7' + input;
+
   let formatted = '+7';
   if (input.length > 1) {
     formatted += ` (${input.substring(1, 4)}`;
