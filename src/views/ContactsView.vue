@@ -34,8 +34,11 @@ onMounted(() => {
           <a class="contact__link heading-second" href="mailto:office@geotech.expert">office@geotech.expert</a>
         </li>
         <li class="contact">
-          <a class="contact__link heading-second" href="https://yandex.ru/maps/-/CDq2IN5C" target="_blank">г. Энгельс, пр-т
-            Химиков 17</a>
+          <a class="contact__link heading-second" href="https://yandex.ru/maps/-/CDq2IN5C" target="_blank">
+            г. Энгельс,
+            <br/>
+            пр-т Химиков 17
+          </a>
         </li>
       </ul>
     </div>
