@@ -13,9 +13,9 @@ onMounted(() => {
   <BreadcrumbsComponent :page-title="pageTitle"/>
 
   <div class="hero-container">
-    <section class="hero container">
+    <section class="hero container contacts-page">
       <h1 class="hero__title">Контакты</h1>
-      <div class="background-shape"></div>
+      <div class="background-shape contacts-page"></div>
     </section>
   </div>
 
@@ -39,7 +39,7 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped>
+<style>
 .contacts {
   display: grid;
   grid-auto-flow: row;

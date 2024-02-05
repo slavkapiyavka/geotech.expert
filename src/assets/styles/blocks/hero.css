@@ -36,6 +36,31 @@
     }
 }
 
+.hero.contacts-page {
+    padding-top: 106px;
+}
+
+@media (min-width: 768px) {
+    .hero.contacts-page {
+        padding-top: 100px;
+        min-height: 400px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .hero.contacts-page {
+        padding-top: 122px;
+        min-height: 450px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .hero.contacts-page {
+        padding-top: 163px;
+        min-height: 600px;
+    }
+}
+
 .hero-container {
     position: relative;
 }
