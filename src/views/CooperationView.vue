@@ -24,7 +24,7 @@ onMounted(() => {
         Работаем с заказчиками, подрядчиками, проектировщиками
       </p>
 
-      <div class="background-shape"></div>
+      <div class="background-shape cooperation-page"></div>
     </section>
   </div>
 

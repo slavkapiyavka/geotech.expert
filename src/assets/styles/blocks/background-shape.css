@@ -110,6 +110,31 @@
 }
 /* Projects page shape end */
 
+/* Cooperation page shape start */
+.background-shape.cooperation-page {
+    clip-path: polygon(0 100%, 2% 100%, 2% 94%, 22% 94%, 22% 78%, 69% 78%, 69% 24%, 100% 24%, 100% 100%, 0 100%);
+    animation-name: shapeAnimationCooperation;
+}
+@media (min-width: 768px) {
+    .background-shape.cooperation-page {
+        clip-path: polygon(0 100%, 2% 100%, 2% 94%, 50% 94%, 50% 46%, 88% 46%, 88% 18%, 100% 18%, 100% 100%, 0 100%);
+        animation-name: shapeAnimationCooperation-768;
+    }
+}
+@media (min-width: 1024px) {
+    .background-shape.cooperation-page {
+        clip-path: polygon(0 100%, 2% 100%, 2% 94%, 38% 94%, 38% 46%, 80% 46%, 80% 18%, 100% 18%, 100% 100%, 0 100%);
+        animation-name: shapeAnimationCooperation-1024;
+    }
+}
+@media (min-width: 1440px) {
+    .background-shape.cooperation-page {
+        clip-path: polygon(0 100%, 2% 100%, 2% 94%, 24% 94%, 24% 74%, 92% 74%, 92% 22%, 100% 22%, 100% 100%, 0 100%);
+        animation-name: shapeAnimationCooperation-1440;
+    }
+}
+/* Cooperation page shape end */
+
 /* Blog page shape start */
 .background-shape.blog-page {
     clip-path: polygon(0 100%, 2% 100%, 2% 94%, 30% 94%, 30% 70%, 70% 70%, 70% 20%, 100% 20%, 100% 100%, 0 100%);
@@ -245,6 +270,66 @@
 @keyframes shapeAnimationProjects {
     from {
         clip-path: polygon(0 100%, 2% 100%, 2% 100%, 50% 100%, 50% 100%, 80% 100%, 80% 100%, 100% 100%, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes shapeAnimationCooperation {
+    from {
+        clip-path: polygon(0 100%, 2% 100%, 2% 100%, 22% 100%, 22% 100%, 69% 100%, 69% 100%, 100% 100%, 100% 100%, 0 100%);
+    }
+    50% {
+        clip-path: polygon(0 100%, 2% 100%, 2% 100%, 22% 100%, 22% 100%, 69% 100%, 69% 24%, 100% 24%, 100% 100%, 0 100%);
+    }
+    80% {
+        clip-path: polygon(0 100%, 2% 100%, 2% 100%, 22% 100%, 22% 78%, 69% 78%, 69% 24%, 100% 24%, 100% 100%, 0 100%);
+    }
+    to {
+        clip-path: polygon(0 100%, 2% 100%, 2% 94%, 22% 94%, 22% 78%, 69% 78%, 69% 24%, 100% 24%, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes shapeAnimationCooperation-768 {
+    from {
+        clip-path: polygon(0 100%, 2% 100%, 2% 100%, 50% 100%, 50% 100%, 88% 100%, 88% 100%, 100% 100%, 100% 100%, 0 100%);
+    }
+    50% {
+        clip-path: polygon(0 100%, 2% 100%, 2% 100%, 50% 100%, 50% 100%, 88% 100%, 88% 18%, 100% 18%, 100% 100%, 0 100%);
+    }
+    80% {
+        clip-path: polygon(0 100%, 2% 100%, 2% 100%, 50% 100%, 50% 46%, 88% 46%, 88% 18%, 100% 18%, 100% 100%, 0 100%);
+    }
+    to {
+        clip-path: polygon(0 100%, 2% 100%, 2% 94%, 50% 94%, 50% 46%, 88% 46%, 88% 18%, 100% 18%, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes shapeAnimationCooperation-1024 {
+    from {
+        clip-path: polygon(0 100%, 2% 100%, 2% 100%, 38% 100%, 38% 100%, 80% 100%, 80% 100%, 100% 100%, 100% 100%, 0 100%);
+    }
+    50% {
+        clip-path: polygon(0 100%, 2% 100%, 2% 100%, 38% 100%, 38% 100%, 80% 100%, 80% 18%, 100% 18%, 100% 100%, 0 100%);
+    }
+    80% {
+        clip-path: polygon(0 100%, 2% 100%, 2% 100%, 38% 100%, 38% 46%, 80% 46%, 80% 18%, 100% 18%, 100% 100%, 0 100%);
+    }
+    to {
+        clip-path: polygon(0 100%, 2% 100%, 2% 94%, 38% 94%, 38% 46%, 80% 46%, 80% 18%, 100% 18%, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes shapeAnimationCooperation-1440 {
+    from {
+        clip-path: polygon(0 100%, 2% 100%, 2% 100%, 24% 100%, 24% 100%, 92% 100%, 92% 100%, 100% 100%, 100% 100%, 0 100%);
+    }
+    50% {
+        clip-path: polygon(0 100%, 2% 100%, 2% 100%, 24% 100%, 24% 100%, 92% 100%, 92% 22%, 100% 22%, 100% 100%, 0 100%);
+    }
+    80% {
+        clip-path: polygon(0 100%, 2% 100%, 2% 100%, 24% 100%, 24% 74%, 92% 74%, 92% 22%, 100% 22%, 100% 100%, 0 100%);
+    }
+    to {
+        clip-path: polygon(0 100%, 2% 100%, 2% 94%, 24% 94%, 24% 74%, 92% 74%, 92% 22%, 100% 22%, 100% 100%, 0 100%);
     }
 }
 
