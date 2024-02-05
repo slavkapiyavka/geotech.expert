@@ -16,7 +16,7 @@ onMounted(() => {
   <div class="hero-container background-color-white">
     <section class="hero container">
       <h1 class="hero__title">Блог</h1>
-      <div class="background-shape blog"></div>
+      <div class="background-shape blog-page"></div>
     </section>
   </div>
 
