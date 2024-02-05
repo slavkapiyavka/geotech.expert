@@ -6,6 +6,7 @@ import { useVisibilityEffect } from "@/composables/useVisibilityEffect.js";
 
 const pageTitle = ref('Сотрудничество');
 
+useVisibilityEffect('.reveal');
 useVisibilityEffect('.introduction-list');
 useVisibilityEffect('[data-splitting]');
 
@@ -14,13 +15,13 @@ onMounted(() => {
 })
 </script>
 
-<template>
-  <BreadcrumbsComponent :page-title="pageTitle" />
+<template :key="pageTitle">
+  <BreadcrumbsComponent class="reveal reveal_left" :page-title="pageTitle" />
 
   <div class="hero-container background-color-white">
     <section class="hero container">
-      <h1 class="hero__title">Сотрудничество</h1>
-      <p class="hero__subtitle container__subtitle hero__subtitle_cooperation">
+      <h1 class="hero__title reveal reveal_left">Сотрудничество</h1>
+      <p class="hero__subtitle container__subtitle hero__subtitle_cooperation reveal reveal_left">
         Работаем с заказчиками, подрядчиками, проектировщиками
       </p>
 

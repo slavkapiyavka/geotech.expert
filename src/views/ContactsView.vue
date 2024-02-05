@@ -1,20 +1,23 @@
 <script setup lang="js">
 import BreadcrumbsComponent from "@/components/BreadcrumbsComponent.vue";
 import { onMounted, ref } from 'vue';
+import {useVisibilityEffect} from "@/composables/useVisibilityEffect.js";
 
 const pageTitle = ref('О компании');
+
+useVisibilityEffect('.reveal');
 
 onMounted(() => {
   document.title = `${pageTitle.value} | Геотехзащита`;
 });
 </script>
 
-<template>
-  <BreadcrumbsComponent :page-title="pageTitle"/>
+<template :key="pageTitle">
+  <BreadcrumbsComponent class="reveal reveal_left" :page-title="pageTitle"/>
 
   <div class="hero-container">
     <section class="hero container contacts-page">
-      <h1 class="hero__title">Контакты</h1>
+      <h1 class="hero__title reveal reveal_left">Контакты</h1>
       <div class="background-shape contacts-page"></div>
     </section>
   </div>

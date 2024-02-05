@@ -92,7 +92,7 @@ onMounted(() => {
 });
 </script>
 
-<template>
+<template :key="pageTitle">
   <div class="hero-wrapper background-color-white">
     <section class="hero index container">
       <span class="hero__decorative-title reveal reveal_top">Проектный инжиниринг</span>

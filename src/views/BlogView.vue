@@ -2,20 +2,23 @@
 import RequestFormComponent from "@/components/RequestFormComponent.vue";
 import BreadcrumbsComponent from "@/components/BreadcrumbsComponent.vue";
 import {onMounted, ref} from "vue";
+import {useVisibilityEffect} from "@/composables/useVisibilityEffect.js";
 
 const pageTitle = ref('Блог');
+
+useVisibilityEffect('.reveal');
 
 onMounted(() => {
   document.title = `${pageTitle.value} | Геотехзащита`;
 })
 </script>
 
-<template>
-  <BreadcrumbsComponent :page-title="pageTitle" />
+<template :key="pageTitle">
+  <BreadcrumbsComponent class="reveal reveal_left" :page-title="pageTitle" />
 
   <div class="hero-container background-color-white">
     <section class="hero container">
-      <h1 class="hero__title">Блог</h1>
+      <h1 class="hero__title reveal reveal_left">Блог</h1>
       <div class="background-shape blog-page"></div>
     </section>
   </div>

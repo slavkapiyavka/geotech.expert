@@ -13,18 +13,19 @@ onMounted(() => {
   Splitting({ by: 'lines' })
 })
 
+useVisibilityEffect('.reveal');
 useVisibilityEffect('.animated-underline');
 useVisibilityEffect('.work-documentation-list__element');
 useVisibilityEffect('[data-splitting]');
 </script>
 
-<template>
-  <BreadcrumbsComponent :page-title="pageTitle" />
+<template :key="pageTitle">
+  <BreadcrumbsComponent class="reveal reveal_left" :page-title="pageTitle" />
 
   <div class="hero-container background-color-white">
     <section class="hero engineering container">
-      <h1 class="hero__title">Проектирование</h1>
-      <p class="hero__subtitle hero__subtitle_engineering">
+      <h1 class="hero__title reveal reveal_left">Проектирование</h1>
+      <p class="hero__subtitle hero__subtitle_engineering reveal reveal_left">
         Выполнение полного спектра услуг для строительства или реконструкции объектов
       </p>
 

@@ -8,7 +8,7 @@ onMounted(() => {
 })
 </script>
 
-<template>
+<template :key="pageTitle">
   <header class="main-header container">
     <div class="main-header__logo">
       <a href="/">

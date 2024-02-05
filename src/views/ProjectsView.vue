@@ -13,8 +13,8 @@ onMounted(() => {
 })
 </script>
 
-<template>
-  <BreadcrumbsComponent :page-title="pageTitle" />
+<template :key="pageTitle">
+  <BreadcrumbsComponent class="reveal reveal_left" :page-title="pageTitle" />
 
   <div class="hero-container background-color-white">
     <section class="hero container">
