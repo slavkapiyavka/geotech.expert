@@ -17,13 +17,12 @@ body {
     scrollbar-width: thin !important;
 
     @media (min-width: 1440px) and (hover: hover) {
-        cursor: url("../images/cursor/cursor.svg") 25 25, crosshair;
+        cursor: none;
     }
 }
 
 html {
     scrollbar-color: var(--orange) var(--white);
-    scrollbar-gutter: stable;
     overflow-scrolling: auto;
 
     @media (prefers-reduced-motion: no-preference) {
@@ -135,7 +134,7 @@ hr {
 a, button {
     @media (min-width: 1440px) {
         &:hover {
-            cursor: url("../images/cursor/cursor-hover.svg") 25 25, crosshair;
+            cursor: none;
         }
     }
 }

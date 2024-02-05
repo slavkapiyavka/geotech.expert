@@ -1,0 +1,21 @@
+.cursor {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+    /*background-image: url("../../images/cursor/cursor.svg");*/
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10000;
+    border: 1px solid var(--white);
+    border-radius: 32px;
+    transition: width 125ms, height 125ms, border-radius 125ms, transform 125ms;
+    mix-blend-mode: difference;
+}
+
+.cursor.interactive {
+    width:42px;
+    height: 42px;
+    border-radius: 42px;
+    /*background-image: url("../../images/cursor/cursor-hover.svg");*/
+}

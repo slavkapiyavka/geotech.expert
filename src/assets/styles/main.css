@@ -1,5 +1,6 @@
 @import "reset.css";
 @import "components/scrollbar.css";
+@import "components/cursor.css";
 @import "utils.css";
 @import "variables/fonts.css";
 @import "variables/geometry.css";
