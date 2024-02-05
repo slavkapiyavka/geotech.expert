@@ -11,7 +11,8 @@ const listElements = ref([])
 const animatedTitles = ref([])
 const movingElements = ref([])
 const textarea = ref(null)
-const { followedElement } = useParallax();
+const { followedElement } = useParallax()
+const phoneNumber = ref('')
 
 const updateTextBasedOnLang = () => {
   const lang = document.documentElement.lang;
@@ -26,6 +27,30 @@ const adjustTextareaHeight = () => {
     }
   })
 }
+
+const formatPhoneNumber = (event) => {
+  let input = event.target.value.replace(/\D/g, '');
+
+  if (input.length > 1) {
+    input = '7' + input.substring(1);
+  }
+  let formatted = '+7';
+  if (input.length > 1) {
+    formatted += ` (${input.substring(1, 4)}`;
+  }
+  if (input.length > 4) {
+    formatted += `) ${input.substring(4, 7)}`;
+  }
+  if (input.length > 7) {
+    formatted += `-${input.substring(7, 9)}`;
+  }
+  if (input.length > 9) {
+    formatted += `-${input.substring(9, 11)}`;
+  }
+
+  phoneNumber.value = formatted;
+  event.target.value = formatted;
+};
 
 useMovingEffect();
 
@@ -280,8 +305,17 @@ onMounted(() => {
           </label>
 
           <label for="phone" class="contact-form__label">
-            <input type="tel" id="phone" name="phone" placeholder="+7 (000)900-00-00" class="contact-form__input"
-                   pattern="\+7 \(\d{3}\)\d{3}-\d{2}-\d{2}" required>
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+7(000)900-00-00"
+                class="contact-form__input"
+                pattern="\+7 \(\d{3}\)\d{3}-\d{2}-\d{2}"
+                required
+                @input="formatPhoneNumber"
+                :value="phoneNumber"
+            />
           </label>
 
           <label for="email" class="contact-form__label">
