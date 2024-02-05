@@ -159,13 +159,21 @@
     }
 }
 
-.hero__description,
-.hero__subtitle {
+.hero__description {
     font-family: var(--font-nevermind-compact);
     font-size: var(--font-text1-size);
     font-weight: var(--regular-font-weight);
     line-height: var(--font-text1-line-height);
     letter-spacing: var(--font-text1-letter-spacing);
+    margin: 0;
+}
+
+.hero__subtitle {
+    font-family: var(--font-nevermind-compact);
+    font-size: var(--font-text2-size);
+    font-weight: var(--regular-font-weight);
+    line-height: var(--font-text2-line-height);
+    letter-spacing: var(--font-text2-letter-spacing);
     margin: 0;
 }
 .hero__picture {
