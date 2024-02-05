@@ -25,7 +25,7 @@ onMounted(() => {
       <p class="hero__subtitle reveal reveal_left">
         Проектирование с использованием новейших технологий, подтвержденных на практике
       </p>
-      <div class="background-shape about"></div>
+      <div class="background-shape about-page"></div>
     </section>
   </div>
 

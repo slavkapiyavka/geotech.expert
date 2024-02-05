@@ -28,7 +28,7 @@ useVisibilityEffect('[data-splitting]');
         Выполнение полного спектра услуг для строительства или реконструкции объектов
       </p>
 
-      <div class="background-shape engineering"></div>
+      <div class="background-shape engineering-page"></div>
     </section>
   </div>
 

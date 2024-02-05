@@ -41,34 +41,34 @@
 /* Index page shape end */
 
 /* About page shape start */
-.background-shape.about {
+.background-shape.about-page {
     clip-path: polygon(0 100%, 2% 100%, 2% 95%, 22% 95%, 22% 76%, 54% 76%, 54% 42%, 100% 42%, 100% 100%, 0 100%);
     animation-name: shapeAnimationAbout-375;
 }
 
 @media (min-width: 768px) {
-    .background-shape.about {
+    .background-shape.about-page {
         clip-path: polygon(0 100%, 2% 100%, 2% 92%, 44% 92%, 44% 40%, 70% 40%, 70% 14%, 100% 14%, 100% 100%, 0 100%);
         animation-name: shapeAnimationAbout-768;
     }
 }
 
 @media (min-width: 1024px) {
-    .background-shape.about {
+    .background-shape.about-page {
         clip-path: polygon(0 100%, 2% 100%, 2% 92%, 32% 92%, 32% 42%, 64% 42%, 64% 14%, 100% 14%, 100% 100%, 0 100%);
         animation-name: shapeAnimationAbout-1024;
     }
 }
 
 @media (min-width: 1440px) {
-    .background-shape.about {
+    .background-shape.about-page {
         clip-path: polygon(0 100%, 2% 100%, 2% 92%, 32% 92%, 32% 50%, 62% 50%, 62% 14%, 100% 14%, 100% 100%, 0 100%);
         animation-name: shapeAnimationAbout-1440;
     }
 }
 
 @media (min-width: 1920px) {
-    .background-shape.about {
+    .background-shape.about-page {
         clip-path: polygon(0 100%, 2% 100%, 2% 92%, 26% 92%, 26% 50%, 62% 50%, 62% 14%, 100% 14%, 100% 100%, 0 100%);
         animation-name: shapeAnimationAbout-1920;
     }
@@ -77,35 +77,15 @@
 
 
 /* Engineering page shape start */
-.background-shape.engineering {
-    clip-path: polygon(
-            0 100%,
-            2% 100%,
-            2% 94%,
-            20% 94%,
-            20% 75%,
-            75% 75%,
-            75% 45%,
-            100% 45%,
-            100% 100%,
-            0 100%);
+.background-shape.engineering-page {
+    clip-path: polygon(0 100%, 2% 100%, 2% 94%, 20% 94%, 20% 75%, 75% 75%, 75% 45%, 100% 45%, 100% 100%, 0 100%);
     animation-name: shapeAnimationEngineering;
 }
 /* Engineering page shape end */
 
 /* Projects page shape start */
 .background-shape.projects {
-    clip-path: polygon(
-            0 100%,
-            2% 100%,
-            2% 90%,
-            50% 90%,
-            50% 80%,
-            80% 80%,
-            80% 50%,
-            100% 50%,
-            100% 100%,
-            0 100%);
+    clip-path: polygon(0 100%, 2% 100%, 2% 90%, 50% 90%, 50% 80%, 80% 80%, 80% 50%, 100% 50%, 100% 100%, 0 100%);
     animation-name: shapeAnimationProjects;
 }
 /* Projects page shape end */
@@ -265,11 +245,29 @@
     from {
         clip-path: polygon(0 100%, 2% 100%, 2% 100%, 20% 100%, 20% 100%, 75% 100%, 75% 100%, 100% 100%, 100% 100%, 0 100%);
     }
+    50% {
+        clip-path: polygon(0 100%, 2% 100%, 2% 100%, 20% 100%, 20% 100%, 75% 100%, 75% 45%, 100% 45%, 100% 100%, 0 100%);
+    }
+    80% {
+        clip-path: polygon(0 100%, 2% 100%, 2% 100%, 20% 100%, 20% 75%, 75% 75%, 75% 45%, 100% 45%, 100% 100%, 0 100%);
+    }
+    to {
+        clip-path: polygon(0 100%, 2% 100%, 2% 94%, 20% 94%, 20% 75%, 75% 75%, 75% 45%, 100% 45%, 100% 100%, 0 100%);
+    }
 }
 
 @keyframes shapeAnimationProjects {
     from {
         clip-path: polygon(0 100%, 2% 100%, 2% 100%, 50% 100%, 50% 100%, 80% 100%, 80% 100%, 100% 100%, 100% 100%, 0 100%);
+    }
+    50% {
+        clip-path: polygon(0 100%, 2% 100%, 2% 100%, 50% 100%, 50% 100%, 80% 100%, 80% 50%, 100% 50%, 100% 100%, 0 100%);
+    }
+    80% {
+        clip-path: polygon(0 100%, 2% 100%, 2% 100%, 50% 100%, 50% 80%, 80% 80%, 80% 50%, 100% 50%, 100% 100%, 0 100%);
+    }
+    to {
+        clip-path: polygon(0 100%, 2% 100%, 2% 90%, 50% 90%, 50% 80%, 80% 80%, 80% 50%, 100% 50%, 100% 100%, 0 100%);
     }
 }
 
