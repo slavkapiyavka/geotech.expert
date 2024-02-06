@@ -31,7 +31,8 @@ const moveSquare = (x, y) => {
   if (cursor.value) {
     const targetElement = document.elementFromPoint(x, y);
     cursorState.isInteractive = targetElement && interactiveDOMElements.includes(targetElement.tagName)
-    cursor.value.style.transform = `translate(${x - 16}px, ${y - 16}px)`
+    cursor.value.style.left = `${x - 16}px`
+    cursor.value.style.top = `${y - 16}px`
   }
 }
 
