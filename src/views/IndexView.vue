@@ -809,7 +809,7 @@ onMounted(() => {
 
 @media (min-width: 1920px) {
   .knowledge__image {
-    height: 600px;
+    height: 750px;
     background-image: url("../assets/images/pages/index/knowledge-1920.png");
   }
 }
@@ -879,7 +879,7 @@ onMounted(() => {
 @media (min-width: 1920px) {
   .knowledge__text-on-image:last-of-type {
     right: 646px;
-    bottom: 26px;
+    bottom: 68px;
   }
 }
 
