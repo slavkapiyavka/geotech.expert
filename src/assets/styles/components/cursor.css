@@ -9,7 +9,7 @@
     z-index: 10000;
     border: 1px solid var(--white);
     border-radius: 32px;
-    transition: width 125ms, height 125ms, border-radius 125ms, transform 125ms;
+    transition: width 125ms, height 125ms, border-radius 125ms, transform 15ms;
     mix-blend-mode: difference;
 }
 

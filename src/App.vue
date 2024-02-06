@@ -13,8 +13,9 @@ const router = useRouter()
 const cursor = ref()
 const cursorState = reactive({
   isInteractive: false,
-  isVisible: true
+  isVisible: false
 })
+const interactiveDOMElements = ['A', 'BUTTON', 'INPUT', 'LABEL', 'TEXTAREA']
 
 const layout = computed(() => {
   if (route.name === 'contacts') {
@@ -29,9 +30,8 @@ const layout = computed(() => {
 const moveSquare = (x, y) => {
   if (cursor.value) {
     const targetElement = document.elementFromPoint(x, y);
-    cursorState.isInteractive = targetElement && ['A', 'BUTTON', 'INPUT', 'LABEL'].includes(targetElement.tagName)
-    cursor.value.style.left = `${x - 16}px`
-    cursor.value.style.top = `${y - 16}px`
+    cursorState.isInteractive = targetElement && interactiveDOMElements.includes(targetElement.tagName)
+    cursor.value.style.transform = `translate(${x - 16}px, ${y - 16}px)`
   }
 }
 
@@ -48,7 +48,7 @@ const handleMouseEnter = () => {
 }
 
 const handleMouseDown = (e) => {
-  if (['A', 'BUTTON', 'INPUT', 'LABEL'].includes(e.target.tagName)) {
+  if (interactiveDOMElements.includes(e.target.tagName)) {
     cursor.value.style.transform = 'scale(0.8)'
   }
 }
