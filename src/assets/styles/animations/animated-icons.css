@@ -1,12 +1,94 @@
 :root {
     --triangle-tiles-animation-duration: 6000ms;
+    --animated-block-size: 332px;
 }
+
+.animated-blocks {
+    display: grid;
+    grid-template-areas: '. lines' 'triangle rect';
+    grid-template-columns: var(--animated-block-size) var(--animated-block-size);
+    grid-template-rows: var(--animated-block-size) var(--animated-block-size);
+}
+
+.dynamic-lines {
+    outline: 1px solid var(--white);
+    outline-offset: -1px;
+    grid-area: lines;
+}
+
+.dynamic-lines__group path {
+    transform: translate(-60%, -60%);
+    animation: linesMovement 20s ease-in-out infinite;
+}
+
+.dynamic-lines__group path:nth-child(1) {
+    animation-delay: 0.8s;
+}
+.dynamic-lines__group path:nth-child(2) {
+    animation-delay: 0s;
+}
+.dynamic-lines__group path:nth-child(3) {
+    animation-delay: 1.6s;
+}
+.dynamic-lines__group path:nth-child(4) {
+    animation-delay: 0.4s;
+}
+.dynamic-lines__group path:nth-child(5) {
+    animation-delay: 1.2s;
+}
+.dynamic-lines__group path:nth-child(6) {
+    animation-delay: 0.6s;
+}
+.dynamic-lines__group path:nth-child(7) {
+    animation-delay: 1.4s;
+}
+.dynamic-lines__group path:nth-child(8) {
+    animation-delay: 0.2s;
+}
+.dynamic-lines__group path:nth-child(9) {
+    animation-delay: 1.8s;
+}
+.dynamic-lines__group path:nth-child(10) {
+    animation-delay: 1s;
+}
+
+@keyframes linesMovement {
+    from,
+    to {
+        opacity: 1;
+        transform: translate(-60%, -60%);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(220%, 220%);
+    }
+    51% {
+        opacity: 0;
+        transform: translate(220%, 220%);
+    }
+    52% {
+        opacity: 0;
+        transform: translate(-220%, -220%);
+    }
+    53% {
+        opacity: 1;
+        transform: translate(-220%, -220%);
+    }
+}
+
 
 .triangle-tiles {
     --triangle-tiles-block-size: 188px;
 
+    grid-area: triangle;
+    margin: -1px 0 0 0;
     width: var(--triangle-tiles-block-size);
     height: var(--triangle-tiles-block-size);
+}
+
+.triangle-tiles svg {
+    width: var(--animated-block-size);
+    height: var(--animated-block-size);
 }
 
 @media (min-width: 768px) {
@@ -444,3 +526,126 @@
         transform: translate(318.517498px, 321.432991px) rotate(0deg)
     }
 }
+
+/* dynamic rect start */
+.dynamic-rect-wrapper {
+    display: grid;
+    place-items: center;
+    width: 332px;
+    height: 332px;
+    grid-area: rect;
+    outline: 1px solid var(--white);
+    outline-offset: -1px;
+}
+
+.dynamic-rect {
+    width: 180px;
+    height: 180px;
+    outline: 1px solid white;
+    outline-offset: -2px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+    gap: 146px;
+    animation: squareAnimation 8s infinite;
+}
+
+.dynamic-rect__square {
+    width: 16px;
+    height: 16px;
+    background: white;
+}
+
+@keyframes squareAnimation {
+    0%,
+    100% {
+        width: 180px;
+        height: 180px;
+        gap: 146px;
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+        background-color: transparent;
+    }
+    15% {
+        width: 120px;
+        height: 120px;
+        gap: 86px;
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+        background-color: transparent;
+    }
+    30% {
+        width: 120px;
+        height: 120px;
+        gap: 86px;
+        opacity: 1;
+        transform: rotate(90deg) scale(1);
+        background-color: transparent;
+    }
+    44% {
+        width: 35px;
+        height: 35px;
+        gap: 0;
+        opacity: 1;
+        transform: rotate(90deg) scale(0.5);
+        background-color: transparent;
+    }
+    45% {
+        width: 35px;
+        height: 35px;
+        gap: 0;
+        opacity: 1;
+        transform: rotate(90deg) scale(0);
+        background-color: white;
+    }
+    55% {
+        width: 35px;
+        height: 35px;
+        gap: 0;
+        opacity: 1;
+        transform: rotate(90deg) scale(0);
+        background-color: white;
+    }
+    56% {
+        width: 35px;
+        height: 35px;
+        gap: 0;
+        opacity: 0;
+        transform: rotate(90deg) scale(0);
+        background-color: white;
+    }
+    65% {
+        width: 35px;
+        height: 35px;
+        gap: 0;
+        opacity: 0;
+        transform: rotate(0deg) scale(0);
+        background-color: transparent;
+    }
+    65% {
+        width: 334px;
+        height: 334px;
+        gap: 298px;
+        opacity: 0;
+        transform: rotate(0deg) scale(1);
+        background-color: transparent;
+    }
+    66% {
+        width: 334px;
+        height: 334px;
+        gap: 298px;
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+        background-color: transparent;
+    }
+    75% {
+        width: 334px;
+        height: 334px;
+        gap: 298px;
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+        background-color: transparent;
+    }
+}
+/* dynamic rect end */
