@@ -23,6 +23,7 @@ const contactFormPhoneError = ref('')
 const contactFormEmailError = ref('')
 const contactFormMessageError = ref('')
 const contactFormAgreementError = ref('')
+const phonePattern = /^(\+?\d{1,3})?\s*(\(\d{3}\)|\d{3})?[\s-]?\d{3}[\s-]?\d{2}[\s-]?\d{2}$/;
 
 const updateTextBasedOnLang = () => {
   const lang = document.documentElement.lang;
@@ -47,8 +48,6 @@ const validateName = () => {
 };
 
 const validatePhone = () => {
-  const phonePattern = /^(\+?\d{1,3})?\s*(\(\d{3}\)|\d{3})?[\s-]?\d{3}[\s-]?\d{2}[\s-]?\d{2}$/;
-
   if (!phonePattern.test(contactFormPhone.value)) {
     contactFormPhoneError.value = 'Введите телефон в формате +7 (000) 000-00-00';
   } else {
@@ -92,7 +91,7 @@ const validateForm = () => {
     contactFormNameError.value = '';
   }
 
-  if (!/\+7 \(\d{3}\)\d{3}-\d{2}-\d{2}/.test(contactFormPhone.value)) {
+  if (!phonePattern.test(contactFormPhone.value)) {
     contactFormPhoneError.value = 'Введите телефон в формате +7 (000) 000-00-00';
     isValid = false;
   } else {
@@ -123,6 +122,10 @@ const validateForm = () => {
   return isValid;
 }
 
+const textareaInputHandle = () => {
+  adjustTextareaHeight()
+  validateMessage()
+}
 const handleSubmit = (e) => {
   e.preventDefault();
   if (validateForm()) {
@@ -436,7 +439,7 @@ onMounted(() => {
 
           <label for="message" class="contact-form__label">
             <textarea
-                @input="adjustTextareaHeight"
+                @input="textareaInputHandle"
                 ref="textarea"
                 id="message"
                 name="message"
@@ -445,7 +448,6 @@ onMounted(() => {
                 rows="1"
                 placeholder="Сообщение"
                 v-model="contactFormMessage"
-                @change="validateMessage"
                 required
             ></textarea>
 
@@ -466,6 +468,7 @@ onMounted(() => {
               name="agreement"
               class="contact-form__input custom-checkbox visually-hidden"
               required
+              v-model="contactFormAgreement"
               @change="validateAgreement"
           >
           <label for="agreement" class="contact-form__label contact-form__label_checkbox">
