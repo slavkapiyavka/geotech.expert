@@ -12,7 +12,17 @@ const animatedTitles = ref([])
 const movingElements = ref([])
 const textarea = ref(null)
 const { followedElement } = useParallax()
-const phoneNumber = ref('')
+const contactFormName = ref('')
+const contactFormPhone = ref('')
+const contactFormEmail = ref('')
+const contactFormMessage = ref('')
+const contactFormAgreement = ref(false)
+
+const contactFormNameError = ref('')
+const contactFormPhoneError = ref('')
+const contactFormEmailError = ref('')
+const contactFormMessageError = ref('')
+const contactFormAgreementError = ref('')
 
 const updateTextBasedOnLang = () => {
   const lang = document.documentElement.lang;
@@ -28,32 +38,97 @@ const adjustTextareaHeight = () => {
   })
 }
 
-const formatPhoneNumber = (event) => {
-  let input = event.target.value.replace(/\D/g, '');
-
-  if (input.startsWith('8') || input.startsWith('7')) {
-    input = input.substring(1);
+const validateName = () => {
+  if (!contactFormName.value) {
+    contactFormNameError.value = 'Пожалуйста, введите ваше имя';
+  } else {
+    contactFormNameError.value = '';
   }
-
-  input = '7' + input;
-
-  let formatted = '+7';
-  if (input.length > 1) {
-    formatted += ` (${input.substring(1, 4)}`;
-  }
-  if (input.length > 4) {
-    formatted += `) ${input.substring(4, 7)}`;
-  }
-  if (input.length > 7) {
-    formatted += `-${input.substring(7, 9)}`;
-  }
-  if (input.length > 9) {
-    formatted += `-${input.substring(9, 11)}`;
-  }
-
-  phoneNumber.value = formatted;
-  event.target.value = formatted;
 };
+
+const validatePhone = () => {
+  const phonePattern = /^(\+?\d{1,3})?\s*(\(\d{3}\)|\d{3})?[\s-]?\d{3}[\s-]?\d{2}[\s-]?\d{2}$/;
+
+  if (!phonePattern.test(contactFormPhone.value)) {
+    contactFormPhoneError.value = 'Введите телефон в формате +7 (000) 000-00-00';
+  } else {
+    contactFormPhoneError.value = '';
+  }
+};
+
+
+
+const validateEmail = () => {
+  if (!/\S+@\S+\.\S+/.test(contactFormEmail.value)) {
+    contactFormEmailError.value = 'Введите корректный email адрес';
+  } else {
+    contactFormEmailError.value = '';
+  }
+};
+
+const validateMessage = () => {
+  if (!contactFormMessage.value) {
+    contactFormMessageError.value = 'Пожалуйста, введите сообщение';
+  } else {
+    contactFormMessageError.value = '';
+  }
+};
+
+const validateAgreement = () => {
+  if (!contactFormAgreement.value) {
+    contactFormAgreementError.value = 'Необходимо ваше согласие';
+  } else {
+    contactFormAgreementError.value = '';
+  }
+};
+
+const validateForm = () => {
+  let isValid = true;
+
+  if (!contactFormName.value) {
+    contactFormNameError.value = 'Пожалуйста, введите ваше имя';
+    isValid = false;
+  } else {
+    contactFormNameError.value = '';
+  }
+
+  if (!/\+7 \(\d{3}\)\d{3}-\d{2}-\d{2}/.test(contactFormPhone.value)) {
+    contactFormPhoneError.value = 'Введите телефон в формате +7 (000) 000-00-00';
+    isValid = false;
+  } else {
+    contactFormPhoneError.value = '';
+  }
+
+  if (!/\S+@\S+\.\S+/.test(contactFormEmail.value)) {
+    contactFormEmailError.value = 'Введите корректный email адрес';
+    isValid = false;
+  } else {
+    contactFormEmailError.value = '';
+  }
+
+  if (!contactFormMessage.value) {
+    contactFormMessageError.value = 'Пожалуйста, введите сообщение';
+    isValid = false;
+  } else {
+    contactFormMessageError.value = '';
+  }
+
+  if (!contactFormAgreement.value) {
+    contactFormAgreementError.value = 'Необходимо ваше согласие';
+    isValid = false;
+  } else {
+    contactFormAgreementError.value = '';
+  }
+
+  return isValid;
+}
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  if (validateForm()) {
+    console.log('форма отправлена')
+  }
+}
 
 useMovingEffect();
 
@@ -297,14 +372,24 @@ onMounted(() => {
       <form class="contact-form__form font-text2" action="/submit-form" method="post">
         <fieldset class="contact-form__fieldset">
           <label for="name" class="contact-form__label">
-            <input type="text" id="name" name="name" placeholder="Иван Иванов" class="contact-form__input error" required>
-            <span class="input-error-message">
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Иван Иванов"
+                class="contact-form__input"
+                :class="{ 'error': contactFormNameError }"
+                required
+                @input="validateName"
+                v-model="contactFormName"
+            >
+            <span v-if="contactFormNameError" class="input-error-message">
                 <svg class="icon" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="6" cy="6.5" r="6" fill="#FF7E7E"/>
                   <path d="M6.45134 2.68164L6.38658 8.11761H5.5547L5.48497 2.68164H6.45134ZM5.45508 9.77181C5.45508 9.61575 5.49991 9.48397 5.58957 9.37646C5.68256 9.26896 5.81871 9.21521 5.99804 9.21521C6.17405 9.21521 6.30854 9.26896 6.40153 9.37646C6.49783 9.48397 6.54599 9.61575 6.54599 9.77181C6.54599 9.92093 6.49783 10.0492 6.40153 10.1567C6.30854 10.2643 6.17405 10.318 5.99804 10.318C5.81871 10.318 5.68256 10.2643 5.58957 10.1567C5.49991 10.0492 5.45508 9.92093 5.45508 9.77181Z" fill="#17425A"/>
                 </svg>
-                error example
-              </span>
+                {{ contactFormNameError }}
+            </span>
           </label>
 
           <label for="phone" class="contact-form__label">
@@ -314,16 +399,39 @@ onMounted(() => {
                 name="phone"
                 placeholder="+7(000)900-00-00"
                 class="contact-form__input"
-                pattern="\+7 \(\d{3}\)\d{3}-\d{2}-\d{2}"
+                :class="{ 'error': contactFormPhoneError }"
                 required
-                @input="formatPhoneNumber"
-                :value="phoneNumber"
+                @input="validatePhone"
+                v-model="contactFormPhone"
             />
+            <span v-if="contactFormPhoneError" class="input-error-message">
+                <svg class="icon" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="6" cy="6.5" r="6" fill="#FF7E7E"/>
+                  <path d="M6.45134 2.68164L6.38658 8.11761H5.5547L5.48497 2.68164H6.45134ZM5.45508 9.77181C5.45508 9.61575 5.49991 9.48397 5.58957 9.37646C5.68256 9.26896 5.81871 9.21521 5.99804 9.21521C6.17405 9.21521 6.30854 9.26896 6.40153 9.37646C6.49783 9.48397 6.54599 9.61575 6.54599 9.77181C6.54599 9.92093 6.49783 10.0492 6.40153 10.1567C6.30854 10.2643 6.17405 10.318 5.99804 10.318C5.81871 10.318 5.68256 10.2643 5.58957 10.1567C5.49991 10.0492 5.45508 9.92093 5.45508 9.77181Z" fill="#17425A"/>
+                </svg>
+                {{ contactFormPhoneError }}
+            </span>
           </label>
 
           <label for="email" class="contact-form__label">
-            <input type="email" id="email" name="email" placeholder="Email@gmail.com" class="contact-form__input"
-                   required>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email@gmail.com"
+                class="contact-form__input"
+                :class="{ 'error': contactFormEmailError }"
+                v-model="contactFormEmail"
+                @input="validateEmail"
+                required
+            >
+            <span v-if="contactFormEmailError" class="input-error-message">
+                <svg class="icon" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="6" cy="6.5" r="6" fill="#FF7E7E"/>
+                  <path d="M6.45134 2.68164L6.38658 8.11761H5.5547L5.48497 2.68164H6.45134ZM5.45508 9.77181C5.45508 9.61575 5.49991 9.48397 5.58957 9.37646C5.68256 9.26896 5.81871 9.21521 5.99804 9.21521C6.17405 9.21521 6.30854 9.26896 6.40153 9.37646C6.49783 9.48397 6.54599 9.61575 6.54599 9.77181C6.54599 9.92093 6.49783 10.0492 6.40153 10.1567C6.30854 10.2643 6.17405 10.318 5.99804 10.318C5.81871 10.318 5.68256 10.2643 5.58957 10.1567C5.49991 10.0492 5.45508 9.92093 5.45508 9.77181Z" fill="#17425A"/>
+                </svg>
+                {{ contactFormEmailError }}
+            </span>
           </label>
 
           <label for="message" class="contact-form__label">
@@ -333,18 +441,44 @@ onMounted(() => {
                 id="message"
                 name="message"
                 class="contact-form__textarea"
+                :class="{ 'error': contactFormMessageError }"
                 rows="1"
                 placeholder="Сообщение"
+                v-model="contactFormMessage"
+                @change="validateMessage"
                 required
             ></textarea>
+
+            <span v-if="contactFormMessageError" class="input-error-message">
+                <svg class="icon" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="6" cy="6.5" r="6" fill="#FF7E7E"/>
+                  <path d="M6.45134 2.68164L6.38658 8.11761H5.5547L5.48497 2.68164H6.45134ZM5.45508 9.77181C5.45508 9.61575 5.49991 9.48397 5.58957 9.37646C5.68256 9.26896 5.81871 9.21521 5.99804 9.21521C6.17405 9.21521 6.30854 9.26896 6.40153 9.37646C6.49783 9.48397 6.54599 9.61575 6.54599 9.77181C6.54599 9.92093 6.49783 10.0492 6.40153 10.1567C6.30854 10.2643 6.17405 10.318 5.99804 10.318C5.81871 10.318 5.68256 10.2643 5.58957 10.1567C5.49991 10.0492 5.45508 9.92093 5.45508 9.77181Z" fill="#17425A"/>
+                </svg>
+                {{ contactFormMessageError }}
+            </span>
           </label>
         </fieldset>
 
-        <div class="contact-form__checkbox">
-          <input type="checkbox" id="agreement" name="agreement" class="contact-form__input custom-checkbox visually-hidden" required>
+        <div class="contact-form__checkbox" :class="{ 'error': contactFormAgreementError }">
+          <input
+              type="checkbox"
+              id="agreement"
+              name="agreement"
+              class="contact-form__input custom-checkbox visually-hidden"
+              required
+              @change="validateAgreement"
+          >
           <label for="agreement" class="contact-form__label contact-form__label_checkbox">
             Я согласен(-на) с обработкой персональных данных
           </label>
+
+          <span v-if="contactFormAgreementError" class="input-error-message">
+                <svg class="icon" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="6" cy="6.5" r="6" fill="#FF7E7E"/>
+                  <path d="M6.45134 2.68164L6.38658 8.11761H5.5547L5.48497 2.68164H6.45134ZM5.45508 9.77181C5.45508 9.61575 5.49991 9.48397 5.58957 9.37646C5.68256 9.26896 5.81871 9.21521 5.99804 9.21521C6.17405 9.21521 6.30854 9.26896 6.40153 9.37646C6.49783 9.48397 6.54599 9.61575 6.54599 9.77181C6.54599 9.92093 6.49783 10.0492 6.40153 10.1567C6.30854 10.2643 6.17405 10.318 5.99804 10.318C5.81871 10.318 5.68256 10.2643 5.58957 10.1567C5.49991 10.0492 5.45508 9.92093 5.45508 9.77181Z" fill="#17425A"/>
+                </svg>
+                {{ contactFormAgreementError }}
+            </span>
         </div>
 
         <div class="contact-form__file-upload">
@@ -358,7 +492,9 @@ onMounted(() => {
         <button
             type="submit"
             class="contact-form__submit primary-button primary-button_orange"
-            v-follow-mouse>
+            v-follow-mouse
+            @click="handleSubmit"
+        >
           Отправить
         </button>
       </form>
@@ -1414,6 +1550,10 @@ onMounted(() => {
 
 .contact-form__checkbox {
   margin-bottom: 40px;
+}
+
+.contact-form__checkbox.error * {
+  color: var(--orange);
 }
 
 @media (min-width: 768px) {
