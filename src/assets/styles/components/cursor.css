@@ -1,21 +1,23 @@
 .cursor {
+    --cursor-size: 60px;
+
+    display: inline-block;
     position: fixed;
-    width: 32px;
-    height: 32px;
+    width: var(--cursor-size);
+    height: var(--cursor-size);
     pointer-events: none;
-    /*background-image: url("../../images/cursor/cursor.svg");*/
+    background-image: url("../../images/cursor/cursor.svg");
     background-repeat: no-repeat;
     background-position: center;
     z-index: 10000;
-    border: 1px solid var(--white);
-    border-radius: 32px;
+    /*border: 1px solid var(--white);*/
+    border-radius: var(--cursor-size);
     transition: width 125ms, height 125ms, border-radius 125ms;
-    mix-blend-mode: difference;
 }
 
 .cursor.interactive {
     width:42px;
     height: 42px;
     border-radius: 42px;
-    /*background-image: url("../../images/cursor/cursor-hover.svg");*/
+    background-image: url("../../images/cursor/cursor-hover.svg");
 }
