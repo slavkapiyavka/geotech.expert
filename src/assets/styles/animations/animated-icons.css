@@ -1,7 +1,25 @@
 :root {
     --triangle-tiles-animation-duration: 6000ms;
     --dynamic-lines-animation-duration: 10000ms;
-    --animated-block-size: 332px;
+    --animated-block-size: 188px;
+}
+
+@media (min-width: 768px) {
+    :root{
+        --animated-block-size: 180px;
+    }
+}
+
+@media (min-width: 1440px) {
+    :root{
+        --animated-block-size: 248px;
+    }
+}
+
+@media (min-width: 1920px) {
+    :root{
+        --animated-block-size: 332px;
+    }
 }
 
 .animated-blocks {
@@ -12,9 +30,21 @@
 }
 
 .dynamic-lines {
+    display: none;
     outline: 1px solid var(--white);
     outline-offset: -1px;
     grid-area: lines;
+}
+
+.dynamic-lines svg {
+    width: var(--animated-block-size);
+    height: var(--animated-block-size);
+}
+
+@media (min-width: 768px) {
+    .dynamic-lines {
+        display: block;
+    }
 }
 
 .dynamic-lines__group path {
@@ -532,8 +562,8 @@
 .dynamic-rect-wrapper {
     display: grid;
     place-items: center;
-    width: 332px;
-    height: 332px;
+    width: var(--animated-block-size);
+    height: var(--animated-block-size);
     grid-area: rect;
     outline: 1px solid var(--white);
     outline-offset: -1px;
