@@ -127,6 +127,7 @@ onMounted(() => {
 .licenses-list {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /* manager block start */

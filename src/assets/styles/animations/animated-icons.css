@@ -559,6 +559,32 @@
 }
 
 /* dynamic rect start */
+:root {
+    --dynamic-rect-size: 100px;
+    --dynamic-rect-square-size: 8px;
+    --dynamic-rect-gap: 100px;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --dynamic-rect-size: 92px;
+    }
+}
+
+@media (min-width: 1440px) {
+    :root {
+        --dynamic-rect-size: 136px;
+        --dynamic-rect-square-size: 12px;
+    }
+}
+
+@media (min-width: 1440px) {
+    :root {
+        --dynamic-rect-size: 182px;
+        --dynamic-rect-square-size: 16px;
+    }
+}
+
 .dynamic-rect-wrapper {
     display: grid;
     place-items: center;
@@ -570,120 +596,121 @@
 }
 
 .dynamic-rect {
-    width: 180px;
-    height: 180px;
+    position: relative;
+    width: var(--dynamic-rect-size);
+    height: var(--dynamic-rect-size);
     outline: 1px solid white;
-    outline-offset: -2px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     place-items: center;
-    gap: 146px;
     animation: squareAnimation 6s infinite;
 }
 
 .dynamic-rect__square {
-    width: 16px;
-    height: 16px;
+    position: absolute;
+    width: var(--dynamic-rect-square-size);
+    height: var(--dynamic-rect-square-size);
     background: white;
+}
+
+.dynamic-rect__square:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+
+.dynamic-rect__square:nth-child(2) {
+    top: 0;
+    right: 0;
+}
+
+.dynamic-rect__square:nth-child(3) {
+    bottom: 0;
+    left: 0;
+}
+
+.dynamic-rect__square:nth-child(4) {
+    bottom: 0;
+    right: 0;
 }
 
 @keyframes squareAnimation {
     0%,
     100% {
-        width: 180px;
-        height: 180px;
-        gap: 146px;
+        width: var(--dynamic-rect-size);
+        height: var(--dynamic-rect-size);
         opacity: 1;
-        transform: rotate(0deg) scale(1);
+        transform: rotate(0deg);
         background-color: transparent;
     }
-    10% {
+    15% {
         width: 120px;
         height: 120px;
-        gap: 86px;
         opacity: 1;
-        transform: rotate(0deg) scale(1);
+        transform: rotate(0deg);
         background-color: transparent;
     }
-    20% {
+    25% {
         width: 120px;
         height: 120px;
-        gap: 86px;
         opacity: 1;
-        transform: rotate(90deg) scale(1);
+        transform: rotate(90deg);
         background-color: transparent;
     }
-    40% {
+    35% {
         width: 120px;
         height: 120px;
-        gap: 86px;
         opacity: 1;
-        transform: rotate(90deg) scale(1);
+        transform: rotate(90deg);
+        background-color: transparent;
+    }
+    45% {
+        width: 35px;
+        height: 35px;
+        opacity: 1;
+        transform: rotate(90deg);
+        background-color: transparent;
+    }
+    50% {
+        width: 0;
+        height: 0;
+        opacity: 0.5;
+        transform: rotate(90deg);
         background-color: transparent;
     }
     55% {
-        width: 35px;
-        height: 35px;
-        gap: 0;
-        opacity: 1;
-        transform: rotate(90deg) scale(0.5);
-        background-color: transparent;
-    }
-    60% {
-        width: 35px;
-        height: 35px;
-        gap: 0;
-        opacity: 1;
-        transform: rotate(90deg) scale(0);
-        background-color: white;
-    }
-    61% {
-        width: 35px;
-        height: 35px;
-        gap: 0;
-        opacity: 1;
-        transform: rotate(90deg) scale(0);
-        background-color: white;
-    }
-    62% {
-        width: 35px;
-        height: 35px;
-        gap: 0;
+        width: 0;
+        height: 0;
         opacity: 0;
-        transform: rotate(90deg) scale(0);
+        transform: rotate(90deg);
         background-color: white;
     }
     63% {
-        width: 35px;
-        height: 35px;
-        gap: 0;
+        width: 0;
+        height: 0;
         opacity: 0;
-        transform: rotate(0deg) scale(0);
+        transform: rotate(0deg);
         background-color: transparent;
     }
     64% {
         width: 334px;
         height: 334px;
-        gap: 298px;
         opacity: 0;
-        transform: rotate(0deg) scale(1);
+        transform: rotate(0deg);
         background-color: transparent;
     }
     65% {
         width: 334px;
         height: 334px;
-        gap: 298px;
         opacity: 1;
-        transform: rotate(0deg) scale(1);
+        transform: rotate(0deg);
         background-color: transparent;
     }
     80% {
         width: 334px;
         height: 334px;
-        gap: 298px;
         opacity: 1;
-        transform: rotate(0deg) scale(1);
+        transform: rotate(0deg);
         background-color: transparent;
     }
 }
