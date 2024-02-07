@@ -2,27 +2,25 @@
     display: contents;
 }
 
-#page-overlay {
+.page-overlay {
     display: contents;
 }
 
-#page-overlay::after {
-    content: '';
+.page-overlay {
     position: fixed;
+    display: block;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: #17425A url("../../icons/overlay-icon.svg") center / 64px no-repeat;
     z-index: 9999;
-    transform: translateY(100%);
-    transition: transform 500ms ease-in-out;
-}
-
-#page-overlay.visible::after {
-    transform: translateY(0%);
-}
-
-#page-overlay.initial::after {
     transform: translateY(-100%);
+    animation: overlayAnimation 750ms forwards;
+}
+
+@keyframes overlayAnimation {
+    from {
+        transform: translateY(0%);
+    }
 }

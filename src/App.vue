@@ -6,8 +6,6 @@ import BaseLayout from '@/layouts/BaseLayout.vue'
 import NotFoundLayout from '@/layouts/NotFoundLayout.vue'
 import { globalStore } from "@/store.js";
 
-const isOverlayVisible = ref(false)
-const overlayDelay = 1250
 const route = useRoute()
 const router = useRouter()
 const cursor = ref()
@@ -59,34 +57,26 @@ const handleMouseUp = () => {
 }
 
 router.beforeEach((to, from, next) => {
-  if(isOverlayVisible.value) {
-    isOverlayVisible.value = false
-  }
-
   if (globalStore.isMenuOpen) {
     globalStore.isMenuOpen = false;
     document.body.classList.remove('no-scroll');
   }
 
   if(!to.hash) {
-    // document.documentElement.classList.add('no-scroll')
-    // document.body.setAttribute('inert', '')
     setTimeout(() => {
       next()
     }, 50)
   } else {
     next();
   }
+
+  document.documentElement.classList.add('no-scroll')
+  document.body.setAttribute('inert', '')
 })
 
 router.afterEach(() => {
   document.documentElement.classList.remove('no-scroll')
   document.body.removeAttribute('inert')
-  if(isOverlayVisible.value) {
-    setTimeout(() => {
-      isOverlayVisible.value = false
-    }, overlayDelay)
-  }
 })
 
 onMounted(() => {
@@ -109,5 +99,5 @@ onUnmounted(() => {
 <template>
   <component :is="layout" :key="route.path" />
   <div v-if="cursorState.isVisible" class="cursor" :class="{ 'interactive': cursorState.isInteractive }" ref="cursor"></div>
-  <div id="page-overlay" :class="[ isOverlayVisible ? 'visible' : 'initial']"></div>
+  <div class="page-overlay"></div>
 </template>
