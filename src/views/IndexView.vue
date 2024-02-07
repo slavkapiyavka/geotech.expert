@@ -209,6 +209,16 @@ onMounted(() => {
 
       <ul class="directions-list">
         <li class="directions-list__element animated-underline">
+          <div class="figure figure-one">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="figure-one__path" d="M74 68L74 6L6 6L6 74L74 74" stroke="#17425A" stroke-width="2" />
+              <rect width="12" height="12" fill="#17425A" />
+              <rect x="67.9999" width="12" height="12" fill="#17425A" />
+              <rect x="34" y="34" width="12" height="12" fill="#17425A" />
+              <rect x="67.9999" y="68" width="12" height="12" fill="#17425A" />
+              <rect y="68" width="12" height="12" fill="#17425A" />
+            </svg>
+          </div>
           <h3 class="direction__title direction__title_geotech heading-fifth">Геотехническое проектирование</h3>
           <p class="direction__text">Расчеты, проектирование и консалтинг грунтовых сооружений</p>
           <p class="direction__text">
@@ -222,6 +232,16 @@ onMounted(() => {
         </li>
 
         <li class="directions-list__element animated-underline">
+          <div class="figure figure-two">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="figure-two__path" d="M6 74L6 6L32.7879 6L74 6L74 74" stroke="#17425A" stroke-width="2" />
+              <rect width="12" height="12" fill="#17425A" />
+              <rect x="67.6914" width="12" height="12" fill="#17425A" />
+              <rect x="33.8477" y="33.8462" width="12" height="12" fill="#17425A" />
+              <rect x="67.6914" y="67.6924" width="12" height="12" fill="#17425A" />
+              <rect y="67.6924" width="12" height="12" fill="#17425A" />
+            </svg>
+          </div>
           <h3 class="direction__title direction__title_engineering heading-fifth">Инженерная защита</h3>
           <p class="direction__text">
             Расчеты, проектирование и консалтинг устройства инженерной защиты территории
@@ -233,6 +253,16 @@ onMounted(() => {
         </li>
 
         <li class="directions-list__element animated-underline">
+          <div class="figure figure-three">
+            <svg class="figure-three__svg" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 74L6 6L74 6L74 74L6 74Z" stroke="#17425A" stroke-width="2" />
+              <rect width="12" height="12" fill="#17425A" />
+              <rect x="67.9999" width="12" height="12" fill="#17425A" />
+              <rect x="34" y="34" width="12" height="12" fill="#17425A" />
+              <rect x="67.9999" y="68" width="12" height="12" fill="#17425A" />
+              <rect y="68" width="12" height="12" fill="#17425A" />
+            </svg>
+          </div>
           <h3 class="direction__title direction__title_eco heading-fifth">Экологическое проектирование</h3>
           <p class="direction__text">
             Проектирование строительства и рекультивации полигонов твердых бытовых / коммунальных отходов, нефтяных
@@ -247,6 +277,16 @@ onMounted(() => {
         </li>
 
         <li class="directions-list__element">
+          <div class="figure figure-four">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="figure-four__path" d="M11 11L40 40.0001L74.0001 74L6.00011 74L74.0001 5.99999L12.0001 6.00007" stroke="#17425A" stroke-width="2" />
+              <rect y="68" width="12" height="12" fill="#17425A" />
+              <rect x="68" y="68" width="12" height="12" fill="#17425A" />
+              <rect x="34.0001" y="34.0001" width="12" height="12" fill="#17425A" />
+              <rect x="68" width="12" height="12" fill="#17425A" />
+              <rect width="12" height="12" fill="#17425A" />
+            </svg>
+          </div>
           <h3 class="direction__title direction__title_pyro heading-fifth">Гидротехническое проектирование</h3>
           <p class="direction__text">
             Проектирование и расчеты дамб, берегоукрепительных сооружений, оросительных каналов, водохранилищ,
@@ -687,33 +727,163 @@ onMounted(() => {
   width: 100%;
 }
 
-.directions-list__element::before {
+.figure svg {
   --decorative-icon-size: 40px;
-  content: "";
-  display: block;
   width: var(--decorative-icon-size);
   height: var(--decorative-icon-size);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+}
+
+.figure-one__path {
+  stroke-dasharray: 160px;
+  stroke-dashoffset: 186px;
+}
+
+.figure-one:hover .figure-one__path {
+  animation: figureOnePath 6s ease-in-out infinite;
+}
+.figure-two:hover .figure-two__path {
+  animation: figureTwoPath 6s ease-in-out infinite;
+}
+
+.figure-three__svg path {
+  opacity: 0;
+}
+
+.figure-four__path {
+  stroke-dasharray: 324px;
+  stroke-dashoffset: 230px;
+}
+
+.figure-three:hover .figure-three__svg path {
+  transform-origin: center;
+  animation: figureThreePath 6s ease-in-out infinite;
+}
+
+.figure-three:hover .figure-three__svg rect {
+  animation: figureThreeRect 6s ease-in-out infinite;
+}
+
+.figure-four:hover .figure-four__path {
+  animation: figureFourPath 8s ease-in-out infinite;
+}
+
+@keyframes figureOnePath {
+  from,
+  to {
+    stroke-dasharray: 160px;
+    stroke-dashoffset: 186px;
+  }
+  50% {
+    stroke-dasharray: 145px;
+    stroke-dashoffset: -60px;
+  }
+}
+
+@keyframes figureTwoPath {
+  from,
+  to {
+    stroke-dasharray: 202px;
+    stroke-dashoffset: 0;
+  }
+  20% {
+    stroke-dasharray: 202px;
+    stroke-dashoffset: 62px;
+  }
+  40% {
+    stroke-dasharray: 202px;
+    stroke-dashoffset: -62px;
+  }
+  60% {
+    stroke-dasharray: 80px;
+    stroke-dashoffset: 18px;
+  }
+  80% {
+    stroke-dasharray: 80px;
+    stroke-dashoffset: 18px;
+  }
+}
+
+@keyframes figureThreePath {
+  from,
+  to {
+    scale: 0;
+    opacity: 0;
+  }
+  20% {
+    scale: 0;
+    opacity: 0;
+  }
+  50% {
+    scale: 0;
+    opacity: 0;
+  }
+  67% {
+    scale: 0.85;
+    opacity: 1;
+  }
+  80% {
+    scale: 0.85;
+    opacity: 1;
+  }
+  90% {
+    scale: 0.85;
+    opacity: 0;
+  }
+}
+
+@keyframes figureThreeRect {
+  from,
+  to {
+    x: revert-layer;
+    y: revert-layer;
+  }
+  50% {
+    x: 34px;
+    y: 34px;
+  }
+  70% {
+    x: revert-layer;
+    y: revert-layer;
+  }
+}
+
+@keyframes figureFourPath {
+  from,
+  to {
+    stroke-dasharray: 324px;
+    stroke-dashoffset: 230px;
+  }
+
+  20% {
+    stroke-dasharray: 324px;
+    stroke-dashoffset: 162px;
+  }
+
+  50% {
+    stroke-dasharray: 324px;
+    stroke-dashoffset: -250px;
+  }
 }
 
 @media (min-width: 768px) {
-  .directions-list__element::before {
+  .figure svg {
     --decorative-icon-size: 44px;
   }
 }
 
 @media (min-width: 1440px) {
-  .directions-list__element::before {
+  .figure svg {
     --decorative-icon-size: 60px;
+  }
+
+  .figure {
     grid-row: 1 / -1;
     position: absolute;
   }
 }
 
 @media (min-width: 1920px) {
-  .directions-list__element::before {
+  .figure svg {
     --decorative-icon-size: 80px;
   }
 }
