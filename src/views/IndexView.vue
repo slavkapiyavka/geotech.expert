@@ -813,11 +813,11 @@ onMounted(() => {
     scale: 0;
     opacity: 0;
   }
-  50% {
+  38% {
     scale: 0;
     opacity: 0;
   }
-  67% {
+  58% {
     scale: 0.85;
     opacity: 1;
   }
@@ -837,11 +837,11 @@ onMounted(() => {
     x: revert-layer;
     y: revert-layer;
   }
-  50% {
+  30% {
     x: 34px;
     y: 34px;
   }
-  70% {
+  60% {
     x: revert-layer;
     y: revert-layer;
   }
