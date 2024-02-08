@@ -546,6 +546,22 @@ onMounted(() => {
           </label>
         </div>
 
+        <ul class="contact-form__attached-list">
+          <li class="attached">
+            <svg class="attached__file" width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.6 0.5H1V16.5H13V5.15823M7.6 0.5L13 5.15823M7.6 0.5V4.09267C7.6 4.68116 8.07706 5.15823 8.66555 5.15823H13" stroke="white" stroke-linecap="round"/>
+            </svg>
+            <p class="attached__file-name overflow-ellipsis font-breadcrumb">
+              Название файла ограничение текста если необходимо
+            </p>
+            <button type="button" class="attached__remove-file">
+              <svg width="18" height="18" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 0.5L17 16.5M17 0.5L1 16.5" stroke="white" stroke-opacity="0.3"/>
+              </svg>
+            </button>
+          </li>
+        </ul>
+
         <button
             type="submit"
             class="contact-form__submit primary-button primary-button_orange"
@@ -1531,7 +1547,7 @@ onMounted(() => {
       'description'
       'form'
       'notification';
-    grid-template-columns: 1fr 1.5fr;
+    /*grid-template-columns: 1fr 1.5fr;*/
     grid-template-rows: auto auto 1fr;
   }
 }
@@ -1568,6 +1584,7 @@ onMounted(() => {
     'fieldset'
     'checkbox'
     'file-upload'
+    'attached'
     'button';
 }
 
@@ -1576,7 +1593,8 @@ onMounted(() => {
     grid-template-areas:
       'fieldset fieldset'
       'checkbox file-upload'
-      'button button';
+      'button attached';
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr min-content min-content;
   }
 }
@@ -1803,6 +1821,35 @@ onMounted(() => {
   }
 }
 
+.contact-form__file-upload::after {
+  content: 'Максимальный вес файла 5 Мб';
+  position: absolute;
+  bottom: -14px;
+  left: 17px;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 9px;
+  letter-spacing: 0;
+  text-align: left;
+  color: #FFFFFF99;
+}
+
+@media (min-width: 1440px) {
+  .contact-form__file-upload::after {
+    font-size: 10px;
+    line-height: 11px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .contact-form__file-upload::after {
+    font-size: 14px;
+    line-height: 15px;
+    left: 9px;
+    bottom: -20px;
+  }
+}
+
 .contact-form__file-upload:hover {
   background-color: var(--white-60);
 }
@@ -1810,6 +1857,12 @@ onMounted(() => {
 @media (min-width: 768px) {
   .contact-form__file-upload {
     justify-self: right;
+  }
+}
+
+@media (min-width: 1920px) {
+  .contact-form__file-upload {
+    padding: 8px 20px 8px 8px;
   }
 }
 
@@ -1873,5 +1926,43 @@ onMounted(() => {
 .contact-form__notification-thanks,
 .contact-form__notification-text {
   color: var(--dark-blue);
+}
+
+.contact-form__attached-list {
+  grid-area: attached;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.attached {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background-color: var(--white-30);
+}
+
+@media (min-width: 1440px) {
+  .attached {
+    padding: 16px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .attached {
+    padding: 20px;
+  }
+}
+
+.attached__remove-file {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 18px;
+  height: 18px;
 }
 </style>
