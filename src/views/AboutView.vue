@@ -85,7 +85,7 @@ onMounted(() => {
 
       <ul class="licenses-list">
         <li class="license reveal reveal_right">
-          <a href="../assets/documents/cpo_16_10_2023.pdf" class="license__link" download="Выписка_СРО_16102023">
+          <a href="src/assets/documents/cpo_16_10_2023.pdf" class="license__link" download="Выписка_СРО_16102023.pdf">
             <p class="license__name">CPO</p>
             <p class="license__info">
               <span class="license__format">PDF</span>
