@@ -20,10 +20,10 @@ onMounted(() => {
     <section class="hero container">
       <h1 class="hero__title reveal reveal_left">Проекты</h1>
       <nav class="tabs-nav reveal reveal_left">
-        <button class="tab tab_active">2023</button>
-        <button class="tab">2022</button>
-        <button class="tab">2021</button>
-        <button class="tab">2020</button>
+        <button type="button" class="tab tab_active">2023</button>
+        <button type="button" class="tab">2022</button>
+        <button type="button" class="tab">2021</button>
+        <button type="button" class="tab">2020</button>
       </nav>
 
       <div class="background-shape projects"></div>
