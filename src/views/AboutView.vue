@@ -36,7 +36,7 @@ onMounted(() => {
       </h2>
 
       <section class="manager reveal reveal_right">
-        <img src="../assets/images/manager.png" width="105" height="105" alt="Фотография генерального директора - Денис Дейнеко" class="manager__image" loading="lazy">
+        <img src="../assets/images/manager.jpg" width="105" height="105" alt="Фотография генерального директора - Денис Дейнеко" class="manager__image" loading="lazy">
         <p class="manager__bio">
           <span class="manager__name">Денис Дейнеко</span>
           <span class="manager__position">генеральный директор</span>
@@ -173,6 +173,7 @@ onMounted(() => {
   min-height: var(--manager-image-size);
   height: var(--manager-image-size);
   border-radius: var(--manager-image-size);
+  object-fit: cover;
 }
 
 @media (min-width: 768px) {
