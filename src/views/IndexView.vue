@@ -12,6 +12,7 @@ const animatedTitles = ref([])
 const movingElements = ref([])
 const textarea = ref(null)
 const { followedElement } = useParallax()
+const isFormNotificationVisible = ref(false)
 const contactFormName = ref('')
 const contactFormPhone = ref('')
 const contactFormEmail = ref('')
@@ -126,10 +127,23 @@ const textareaInputHandle = () => {
   adjustTextareaHeight()
   validateMessage()
 }
+
+const resetForm = () => {
+  contactFormName.value = ''
+  contactFormPhone.value = ''
+  contactFormEmail.value = ''
+  contactFormMessage.value = ''
+  contactFormAgreement.value = false
+}
+
 const handleSubmit = (e) => {
   e.preventDefault();
   if (validateForm()) {
-    console.log('форма отправлена')
+    isFormNotificationVisible.value = true;
+
+    resetForm();
+
+    setTimeout(() => isFormNotificationVisible.value = false, 4500);
   }
 }
 
@@ -541,6 +555,11 @@ onMounted(() => {
           Отправить
         </button>
       </form>
+
+      <div v-if="isFormNotificationVisible" class="contact-form__notification">
+        <p class="contact-form__notification-thanks heading-fifth">Спасибо!</p>
+        <span class="contact-form__notification-text font-text2">Ваша заявка отправлена.</span>
+      </div>
     </section>
   </div>
 </template>
@@ -1501,15 +1520,29 @@ onMounted(() => {
   grid-template-areas:
     'title'
     'description'
-    'form';
+    'form'
+    'notification';
+}
+
+@media (min-width: 768px) {
+  .contact-form {
+    grid-template-areas:
+      'title'
+      'description'
+      'form'
+      'notification';
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: auto auto 1fr;
+  }
 }
 
 @media (min-width: 1024px) {
   .contact-form {
     grid-template-areas:
       'title form'
-      'description form';
-    grid-template-rows: auto 1fr;
+      'description form'
+      'notification form';
+    gap: 0 20px;
   }
 }
 
@@ -1793,5 +1826,52 @@ onMounted(() => {
   outline-offset: 2px;
   outline: 1px solid var(--orange);
   background-color: var(--white-60);
+}
+
+.contact-form__notification {
+  grid-area: notification;
+  padding: 25px 20px;
+  min-height: 92px;
+  height: fit-content;
+  margin-top: 24px;
+  background: url("../assets/icons/mail-icon.svg")  calc(100% - 12px) center / 94px no-repeat var(--beige);
+}
+
+@media (min-width: 768px) {
+  .contact-form__notification {
+    width: 312px;
+    background-position: calc(100% - 20px) center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-form__notification {
+    margin-top: auto;
+  }
+}
+
+@media (min-width: 1440px) {
+  .contact-form__notification {
+    padding: 40px 28px;
+    width: 450px;
+    min-height: 132px;
+    background-size: 136px;
+    background-position: calc(100% - 28px) center;
+  }
+}
+
+@media (min-width: 1440px) {
+  .contact-form__notification {
+    padding: 62px 40px;
+    width: 596px;
+    min-height: 190px;
+    background-size: 180px;
+    background-position: calc(100% - 40px) center;
+  }
+}
+
+.contact-form__notification-thanks,
+.contact-form__notification-text {
+  color: var(--dark-blue);
 }
 </style>
