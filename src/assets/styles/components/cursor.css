@@ -1,23 +1,19 @@
 .cursor {
-    --cursor-size: 60px;
+    --cursor-size: 32px;
 
-    display: inline-block;
     position: fixed;
     width: var(--cursor-size);
     height: var(--cursor-size);
     pointer-events: none;
-    background-image: url("../../images/cursor/cursor.svg");
     background-repeat: no-repeat;
     background-position: center;
     z-index: 10000;
-    /*border: 1px solid var(--white);*/
-    border-radius: var(--cursor-size);
+    border: 1px solid var(--white);
+    border-radius: 32px;
     transition: width 125ms, height 125ms, border-radius 125ms;
+    mix-blend-mode: difference;
 }
 
 .cursor.interactive {
-    width:42px;
-    height: 42px;
-    border-radius: 42px;
-    background-image: url("../../images/cursor/cursor-hover.svg");
+    --cursor-size: 42px;
 }
