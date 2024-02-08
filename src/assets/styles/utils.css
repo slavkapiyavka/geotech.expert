@@ -78,3 +78,9 @@
 .main-content > div {
     z-index: 0;
 }
+
+.overflow-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
