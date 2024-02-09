@@ -34,10 +34,8 @@ onMounted(() => {
           <a class="contact__link heading-second" href="mailto:office@geotech.expert">office@geotech.expert</a>
         </li>
         <li class="contact">
-          <a class="contact__link heading-second" href="https://yandex.ru/maps/-/CDq2IN5C" target="_blank">
-            г. Энгельс,
-            <br/>
-            пр-т Химиков 17
+          <a class="contact__link address heading-second" href="https://yandex.ru/maps/-/CDq2IN5C" target="_blank">
+            г. Энгельс, <span class="text-break"></span> пр-т Химиков 17
           </a>
         </li>
       </ul>
@@ -72,6 +70,12 @@ onMounted(() => {
 .contact__link {
   color: var(--white);
   text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .contact__link.address .text-break::after {
+    white-space: unset;
+  }
 }
 
 .contacts-list {
