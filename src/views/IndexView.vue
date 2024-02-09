@@ -1826,7 +1826,7 @@ onMounted(() => {
   position: absolute;
   bottom: -14px;
   left: 17px;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 400;
   line-height: 9px;
   letter-spacing: 0;
