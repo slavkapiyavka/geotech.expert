@@ -1547,7 +1547,6 @@ onMounted(() => {
       'description'
       'form'
       'notification';
-    /*grid-template-columns: 1fr 1.5fr;*/
     grid-template-rows: auto auto 1fr;
   }
 }
@@ -1558,6 +1557,7 @@ onMounted(() => {
       'title form'
       'description form'
       'notification form';
+    grid-template-columns: 1fr 1.75fr;
     gap: 0 20px;
   }
 }
@@ -1825,7 +1825,7 @@ onMounted(() => {
   content: 'Максимальный вес файла 5 Мб';
   position: absolute;
   bottom: -14px;
-  left: 17px;
+  left: 6px;
   font-size: 10px;
   font-weight: 400;
   line-height: 9px;
@@ -1882,12 +1882,19 @@ onMounted(() => {
 }
 
 .contact-form__notification {
-  grid-area: notification;
   padding: 25px 20px;
   min-height: 92px;
   height: fit-content;
   margin-top: 24px;
   background: url("../assets/icons/mail-icon.svg")  calc(100% - 12px) center / 94px no-repeat var(--beige);
+  animation: notificationAppearance 1s ease-in-out;
+}
+
+@keyframes notificationAppearance {
+  from {
+    opacity: 0;
+    transform: translateX(10%);
+  }
 }
 
 @media (min-width: 768px) {
