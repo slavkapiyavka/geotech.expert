@@ -1,6 +1,6 @@
 .reveal.reveal {
     opacity: 0;
-    transition: all 450ms ease-in-out;
+    transition: all 750ms ease-in-out;
 }
 
 .reveal.reveal_top {
@@ -21,7 +21,7 @@
 
 .reveal.visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate(0);
 }
 
 .reveal.reveal.delay-1250 {
@@ -31,3 +31,156 @@
 .reveal.reveal.delay-1750 {
     transition-delay: 1750ms;
 }
+
+/* transition delays */
+.reveal:nth-of-type(1) {
+    transition-delay: 75ms;
+}
+.reveal:nth-of-type(2) {
+    transition-delay: 150ms;
+}
+.reveal:nth-of-type(3) {
+    transition-delay: 225ms;
+}
+.reveal:nth-of-type(4) {
+    transition-delay: 300ms;
+}
+.reveal:nth-of-type(5) {
+    transition-delay: 375ms;
+}
+.reveal:nth-of-type(6) {
+    transition-delay: 450ms;
+}
+.reveal:nth-of-type(7) {
+    transition-delay: 525ms;
+}
+.reveal:nth-of-type(8) {
+    transition-delay: 600ms;
+}
+.reveal:nth-of-type(9) {
+    transition-delay: 675ms;
+}
+.reveal:nth-of-type(10) {
+    transition-delay: 750ms;
+}
+.reveal:nth-of-type(11) {
+    transition-delay: 825ms;
+}
+.reveal:nth-of-type(12) {
+    transition-delay: 900ms;
+}
+.reveal:nth-of-type(13) {
+    transition-delay: 975ms;
+}
+.reveal:nth-of-type(14) {
+    transition-delay: 1050ms;
+}
+.reveal:nth-of-type(15) {
+    transition-delay: 1125ms;
+}
+.reveal:nth-of-type(16) {
+    transition-delay: 1200ms;
+}
+.reveal:nth-of-type(17) {
+    transition-delay: 1275ms;
+}
+.reveal:nth-of-type(18) {
+    transition-delay: 1350ms;
+}
+.reveal:nth-of-type(19) {
+    transition-delay: 1425ms;
+}
+.reveal:nth-of-type(20) {
+    transition-delay: 1500ms;
+}
+.reveal:nth-of-type(21) {
+    transition-delay: 1575ms;
+}
+.reveal:nth-of-type(22) {
+    transition-delay: 1650ms;
+}
+.reveal:nth-of-type(23) {
+    transition-delay: 1725ms;
+}
+.reveal:nth-of-type(24) {
+    transition-delay: 1800ms;
+}
+.reveal:nth-of-type(25) {
+    transition-delay: 1875ms;
+}
+.reveal:nth-of-type(26) {
+    transition-delay: 1950ms;
+}
+.reveal:nth-of-type(27) {
+    transition-delay: 2025ms;
+}
+.reveal:nth-of-type(28) {
+    transition-delay: 2100ms;
+}
+.reveal:nth-of-type(29) {
+    transition-delay: 2175ms;
+}
+.reveal:nth-of-type(30) {
+    transition-delay: 2250ms;
+}
+.reveal:nth-of-type(31) {
+    transition-delay: 2325ms;
+}
+.reveal:nth-of-type(32) {
+    transition-delay: 2400ms;
+}
+.reveal:nth-of-type(33) {
+    transition-delay: 2475ms;
+}
+.reveal:nth-of-type(34) {
+    transition-delay: 2550ms;
+}
+.reveal:nth-of-type(35) {
+    transition-delay: 2625ms;
+}
+.reveal:nth-of-type(36) {
+    transition-delay: 2700ms;
+}
+.reveal:nth-of-type(37) {
+    transition-delay: 2775ms;
+}
+.reveal:nth-of-type(38) {
+    transition-delay: 2850ms;
+}
+.reveal:nth-of-type(39) {
+    transition-delay: 2925ms;
+}
+.reveal:nth-of-type(40) {
+    transition-delay: 3000ms;
+}
+.reveal:nth-of-type(41) {
+    transition-delay: 3075ms;
+}
+.reveal:nth-of-type(42) {
+    transition-delay: 3150ms;
+}
+.reveal:nth-of-type(43) {
+    transition-delay: 3225ms;
+}
+.reveal:nth-of-type(44) {
+    transition-delay: 3300ms;
+}
+.reveal:nth-of-type(45) {
+    transition-delay: 3375ms;
+}
+.reveal:nth-of-type(46) {
+    transition-delay: 3450ms;
+}
+.reveal:nth-of-type(47) {
+    transition-delay: 3525ms;
+}
+.reveal:nth-of-type(48) {
+    transition-delay: 3600ms;
+}
+.reveal:nth-of-type(49) {
+    transition-delay: 3675ms;
+}
+.reveal:nth-of-type(50) {
+    transition-delay: 3750ms;
+}
+

@@ -44,27 +44,27 @@ useVisibilityEffect('[data-splitting]');
   <div class="research-wrapper background-color-white">
     <section class="research container">
       <h2 class="research__title container__title" data-splitting>Экономическое исследование</h2>
-      <p class="research__subtitle container__subtitle">
+      <p class="research__subtitle container__subtitle reveal reveal_bottom">
         Для принятия инвестором решения о начале ведения и реализации проекта
       </p>
 
       <div class="research-list-wrapper">
-        <span class="research-list-title">
+        <span class="research-list-title reveal reveal_bottom">
           Целесообразность строительства определяется по результатам экономических изысканий:
         </span>
 
         <ul class="research-list">
-          <li class="research-list__element">
+          <li class="research-list__element reveal reveal_bottom">
             <span>
               Вариантное проектирование
             </span>
           </li>
-          <li class="research-list__element">
+          <li class="research-list__element reveal reveal_bottom">
             <span>
               Техникоэкономическое сравнение
             </span>
           </li>
-          <li class="research-list__element">
+          <li class="research-list__element reveal reveal_bottom">
             <span>
               Техникоэкономическое обоснование
             </span>
@@ -79,23 +79,23 @@ useVisibilityEffect('[data-splitting]');
       <h2 class="surveys__title container__title" data-splitting>Инженерные изыскания</h2>
 
       <ul class="surveys-list">
-        <li class="surveys-list__element">
+        <li class="surveys-list__element reveal reveal_bottom">
           <span class="survey__name">Экологические</span>
           <span class="survey__description">Исследование воздуха и вод на поверхности грунта</span>
         </li>
-        <li class="surveys-list__element">
+        <li class="surveys-list__element reveal reveal_bottom">
           <span class="survey__name">Геологические</span>
           <span class="survey__description">Информации о рельефе и ситуации местности</span>
         </li>
-        <li class="surveys-list__element">
+        <li class="surveys-list__element reveal reveal_bottom">
           <span class="survey__name">Гидрометеорологические</span>
           <span class="survey__description">Атмосферные условия</span>
         </li>
-        <li class="surveys-list__element">
+        <li class="surveys-list__element reveal reveal_bottom">
           <span class="survey__name">Геодезические</span>
           <span class="survey__description">Характер и рельеф местности</span>
         </li>
-        <li class="surveys-list__element">
+        <li class="surveys-list__element reveal reveal_bottom">
           <span class="survey__name">Геотехнические</span>
           <span class="survey__description">Изучение свойств различного типа грунтов</span>
         </li>
@@ -106,7 +106,7 @@ useVisibilityEffect('[data-splitting]');
   <div class="sketch-design-wrapper background-color-beige">
     <section class="sketch-design container">
       <h2 class="sketch-design__title container__title" data-splitting>Эскизное <span></span>проектирование</h2>
-      <p class="sketch-design__subtitle container__subtitle">
+      <p class="sketch-design__subtitle container__subtitle reveal reveal_bottom">
         Визуализация проекта, проработка вариантов решения без детализации
       </p>
 
@@ -147,7 +147,7 @@ useVisibilityEffect('[data-splitting]');
   <div class="project-documentation-wrapper background-color-beige">
     <section class="project-documentation container">
       <h2 class="project-documentation__title container__title" data-splitting>Проектная документация</h2>
-      <p class="project-documentation__subtitle container__subtitle">
+      <p class="project-documentation__subtitle container__subtitle reveal reveal_bottom">
         Прорабатываются основные проектные решения, подлежащие прохожению экспертизы
       </p>
 
@@ -165,7 +165,7 @@ useVisibilityEffect('[data-splitting]');
   <div class="work-documentation-wrapper background-color-orange">
     <section class="work-documentation container">
       <h2 class="work-documentation__title container__title" data-splitting>Рабочая документация</h2>
-      <p class="work-documentation__subtitle container__subtitle">
+      <p class="work-documentation__subtitle container__subtitle reveal reveal_bottom">
         Детально проработанные проектные решения, на основании которых подрядчик может приступать к реализации
       </p>
 
@@ -214,7 +214,7 @@ useVisibilityEffect('[data-splitting]');
   <div class="expertise-wrapper background-color-white">
     <section class="expertise container">
       <h2 class="expertise__title container__title" data-splitting>Сопровождение экспертизы</h2>
-      <p class="expertise__subtitle container__subtitle">
+      <p class="expertise__subtitle container__subtitle reveal reveal_bottom">
         Ведение проекта до получения положительного заключения экспертизы проектной документации
       </p>
 
@@ -335,7 +335,11 @@ useVisibilityEffect('[data-splitting]');
     margin-bottom: 180px;
   }
 }
+.research-list__element {
+  overflow: hidden;
+}
 .research-list__element span {
+  display: inline-block;
   margin: 0;
   text-transform: uppercase;
   font-family: var(--font-nevermind-compact);
@@ -400,6 +404,24 @@ useVisibilityEffect('[data-splitting]');
   grid-template-columns: 1fr;
   grid-template-areas: "icon" "name" "description";
   gap: 4px;
+}
+.surveys-list__element:nth-of-type(1) {
+  transition-delay: 75ms;
+}
+.surveys-list__element:nth-of-type(2) {
+  transition-delay: 150ms;
+}
+.surveys-list__element:nth-of-type(3) {
+  transition-delay: 225ms;
+}
+.surveys-list__element:nth-of-type(4) {
+  transition-delay: 300ms;
+}
+.surveys-list__element:nth-of-type(5) {
+  transition-delay: 375ms;
+}
+.surveys-list__element:nth-of-type(6) {
+  transition-delay: 450ms;
 }
 @media (min-width: 768px) {
   .surveys-list__element {

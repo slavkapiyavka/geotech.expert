@@ -337,7 +337,7 @@ onMounted(() => {
 
   <div class="advantages-wrapper">
     <section class="advantages container moving">
-      <h2 class="advantages__title">Почему с нами работают?</h2>
+      <h2 class="advantages__title reveal reveal_bottom">Почему с нами работают?</h2>
       <ul class="advantages-list">
         <li class="advantages-list-element">
           <h3 class="advantages-list-element__title">Комфортные условия</h3>
@@ -364,7 +364,7 @@ onMounted(() => {
 
   <div class="stages-wrapper">
     <section class="stages container moving">
-      <h2 class="stages__title heading-second">Этапы проектирования</h2>
+      <h2 class="stages__title heading-second reveal reveal_bottom">Этапы проектирования</h2>
 
       <ul class="stages-list">
         <li class="stages-list__stage stages-list__stage_white">
@@ -384,10 +384,10 @@ onMounted(() => {
 
   <div class="blog-wrapper background-color-white">
     <section class="blog container">
-      <h2 class="blog__title">Блог</h2>
+      <h2 class="blog__title reveal reveal_bottom">Блог</h2>
 
       <div class="articles-wrapper">
-        <article class="article-preview">
+        <article class="article-preview reveal reveal_bottom">
           <time class="article-preview__date tag" datetime="2023-06-25">25.06.23</time>
           <h6 class="article-preview__title short-text-three">Подземные переходы трубопроводов с применением раструбных труб</h6>
           <p class="article-preview__excerpt short-text-two">
@@ -395,7 +395,7 @@ onMounted(() => {
           </p>
           <a href="##" class="article-preview__link">читать статью</a>
         </article>
-        <article class="article-preview">
+        <article class="article-preview reveal reveal_bottom">
           <time class="article-preview__date tag" datetime="2023-06-25">25.06.23</time>
           <h6 class="article-preview__title short-text-three">
             Проектирование систем водоотведения в сложных климатических условиях
@@ -405,7 +405,7 @@ onMounted(() => {
           </p>
           <a href="##" class="article-preview__link">читать статью</a>
         </article>
-        <article class="article-preview">
+        <article class="article-preview reveal reveal_bottom">
           <time class="article-preview__date tag" datetime="2023-06-25">25.06.23</time>
           <h6 class="article-preview__title short-text-three">
             Монтаж наружных трубопроводов с использованием антивибрационных креплений

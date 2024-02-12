@@ -70,10 +70,10 @@ onMounted(() => {
 
   <div class="cooperation-wrapper">
     <section class="cooperation container">
-      <h2 class="cooperation__title container__title">Мы сотрудничаем</h2>
+      <h2 class="cooperation__title container__title reveal reveal_bottom">Мы сотрудничаем</h2>
 
       <ul class="cooperation-list">
-        <li class="cooperation-list-element">
+        <li class="cooperation-list-element reveal reveal_bottom">
           <p class="cooperation-list__title">
             государственные и коммерческие организации
           </p>
@@ -82,7 +82,7 @@ onMounted(() => {
           </span>
         </li>
 
-        <li class="cooperation-list-element">
+        <li class="cooperation-list-element reveal reveal_bottom">
           <p class="cooperation-list__title">
             проектные организации
           </p>
@@ -91,7 +91,7 @@ onMounted(() => {
           </span>
         </li>
 
-        <li class="cooperation-list-element">
+        <li class="cooperation-list-element reveal reveal_bottom">
           <p class="cooperation-list__title">
             Самозанятые Специалисты
           </p>
@@ -105,10 +105,10 @@ onMounted(() => {
 
   <div class="collection-wrapper background-color-white">
     <section class="collection container">
-      <h2 class="collection__title container__title">Первый шаг</h2>
-      <p class="collection__subtitle container__subtitle">Сбор исходных данных</p>
+      <h2 class="collection__title container__title reveal reveal_bottom">Первый шаг</h2>
+      <p class="collection__subtitle container__subtitle reveal reveal_bottom">Сбор исходных данных</p>
 
-      <details class="collection-details">
+      <details class="collection-details reveal">
         <summary class="collection-details__summary">
           Техническое задание
         </summary>
@@ -128,7 +128,7 @@ onMounted(() => {
         </ul>
       </details>
 
-      <details class="collection-details">
+      <details class="collection-details reveal">
         <summary class="collection-details__summary">
           Документы
         </summary>
@@ -312,8 +312,21 @@ onMounted(() => {
   }
 }
 .collection-details {
+  position: relative;
   margin-bottom: 28px;
-  border-bottom: 1px solid var(--dark-blue);
+}
+.collection-details::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  transition: width 2s;
+  background-color: var(--dark-blue);
+}
+.collection-details.visible::after {
+  width: 100%;
 }
 @media (min-width: 1440px) {
   .collection-details {

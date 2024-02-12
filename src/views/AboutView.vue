@@ -53,16 +53,18 @@ onMounted(() => {
   <div class="engineering-wrapper">
     <section class="engineering container">
       <h2 class="engineering__title" data-splitting>Грамотное проектирование</h2>
-      <p class="engineering__subtitle">Применение современных материалов и технологий позволяет:</p>
+      <p class="engineering__subtitle reveal reveal_bottom">
+        Применение современных материалов и технологий позволяет:
+      </p>
 
       <ul class="engineering-list">
-        <li class="engineering-list__element">
+        <li class="engineering-list__element reveal reveal_bottom">
           <p class="heading-fifth">Упрощать строительство</p>
         </li>
-        <li class="engineering-list__element">
+        <li class="engineering-list__element reveal reveal_bottom">
           <p class="heading-fifth">Увеличивать надежность</p>
         </li>
-        <li class="engineering-list__element">
+        <li class="engineering-list__element reveal reveal_bottom">
           <p class="heading-fifth">Повышать экономическую эффективность</p>
         </li>
       </ul>
@@ -79,7 +81,7 @@ onMounted(() => {
   <div class="licenses-wrapper background-color-white">
     <section class="licenses container">
       <h2 class="licenses__title" data-splitting>Лицензия</h2>
-      <p class="licenses__description">
+      <p class="licenses__description reveal reveal_bottom">
         У нас есть все необходимые допуски СРО для осуществления профессиональной деятельности
       </p>
 
@@ -127,7 +129,6 @@ onMounted(() => {
 .licenses-list {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 /* manager block start */

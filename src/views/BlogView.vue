@@ -25,7 +25,7 @@ onMounted(() => {
 
   <div class="articles-grid-wrapper background-color-white">
     <section class="articles-grid container" id="articlesGrid">
-      <article class="article">
+      <article class="article reveal reveal_bottom">
         <img src="" alt="Обложка статьи" class="article__image" loading="lazy">
         <time class="article__tag tag" datetime="2023-06-25">25.06.23</time>
         <h6 class="article__title short-text-three">
@@ -35,25 +35,25 @@ onMounted(() => {
           При устройстве переходов методом труба в трубе с применением раструбных бетонных или чугунных труб имеется ряд особенностей. Раструбное соединение труб не позволяет осуществлять протаскивание вытягиванием рабочей плети, а уширение диаметра в местах раструба является препятствием при укладке рабочей плети в футляре (дюкере).
         </p>
       </article>
-      <article class="article">
+      <article class="article reveal reveal_bottom">
         <img src="" alt="Обложка статьи" class="article__image" loading="lazy">
         <time class="article__tag tag" datetime="2023-06-25">25.06.23</time>
         <h6 class="article__title short-text-three">Проектирование систем водоотведения в сложных климатических условиях</h6>
         <p class="article__excerpt short-text-two">Создание эффективных систем водоотведения в регионах с экстремальными погодными условиями требует применения специальных технологических решений. Необходимо учитывать возможность температурных колебаний, которые могут привести к деформации трубопроводов, а также использовать материалы, устойчивые к коррозии и образованию ледяных заторов.</p>
       </article>
-      <article class="article">
+      <article class="article reveal reveal_bottom">
         <img src="" alt="Обложка статьи" class="article__image" loading="lazy">
         <time class="article__tag tag" datetime="2023-06-25">25.06.23</time>
         <h6 class="article__title short-text-three">Монтаж наружных трубопроводов с использованием антивибрационных креплений</h6>
         <p class="article__excerpt short-text-two">Для предотвращения повреждения наружных трубопроводов из-за вибраций и температурных расширений, применяются антивибрационные крепления. Эти элементы позволяют трубам "играть", компенсируя вибрации от проходящего транспорта и температурные изменения, тем самым снижая риск трещин и разрывов в системе.</p>
       </article>
-      <article class="article">
+      <article class="article reveal reveal_bottom">
         <img src="" alt="Обложка статьи" class="article__image" loading="lazy">
         <time class="article__tag tag" datetime="2023-06-25">25.06.23</time>
         <h6 class="article__title short-text-three">Инновационные методы защиты труб от коррозии</h6>
         <p class="article__excerpt short-text-two">Защита металлических труб от коррозии является ключевой задачей для продления срока их службы, особенно в условиях агрессивной среды. Применение новейших покрытий на основе полимерных материалов и антикоррозийных составов позволяет значительно увеличить устойчивость трубопроводов к химическому воздействию и окислению.</p>
       </article>
-      <article class="article">
+      <article class="article reveal reveal_bottom">
         <img src="" alt="Обложка статьи" class="article__image" loading="lazy">
         <time class="article__tag tag" datetime="2023-06-25">25.06.23</time>
         <h6 class="article__title short-text-three">Адаптация городских канализационных систем к повышенным нагрузкам</h6>
