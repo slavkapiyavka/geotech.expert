@@ -112,31 +112,31 @@ useVisibilityEffect('[data-splitting]');
 
       <ul class="sketch-design-list">
         <li class="sketch-design-list-element">
-          <h3 class="sketch-design-list-element__title">
+          <h3 class="sketch-design-list-element__title reveal reveal_bottom">
             Обсуждение с клиентом
           </h3>
-          <p class="sketch-design-list-element__text">
+          <p class="sketch-design-list-element__text reveal reveal_bottom">
             технических особенностей будущего объекта
           </p>
         </li>
         <li class="sketch-design-list-element">
-          <h3 class="sketch-design-list-element__title">
+          <h3 class="sketch-design-list-element__title reveal reveal_bottom">
             Изучение технического задания
           </h3>
-          <p class="sketch-design-list-element__text">
+          <p class="sketch-design-list-element__text reveal reveal_bottom">
             с целью соблюдения всех требований
           </p>
         </li>
         <li class="sketch-design-list-element">
-          <h3 class="sketch-design-list-element__title">
+          <h3 class="sketch-design-list-element__title reveal reveal_bottom">
             Результат
           </h3>
-          <p class="sketch-design-list-element__text">
+          <p class="sketch-design-list-element__text reveal reveal_bottom">
             заказчик получает в виде чертежей общего вида и пояснительную записку
           </p>
         </li>
         <li class="sketch-design-list-element">
-          <p class="sketch-design-list-element__text result-text">
+          <p class="sketch-design-list-element__text result-text reveal reveal_right">
             После представления эскизного проекта и согласования его с клиентом работа переходит на следующий этап
           </p>
         </li>
@@ -151,12 +151,12 @@ useVisibilityEffect('[data-splitting]');
         Прорабатываются основные проектные решения, подлежащие прохожению экспертизы
       </p>
 
-      <div class="project-documentation-decorative">
+      <div class="project-documentation-decorative reveal reveal_right">
         <p class="project-documentation-decorative__text">Содержит текстовую и графическую  часть</p>
         <div class="project-documentation-decorative__stripes-block"></div>
       </div>
 
-      <p class="result-text">
+      <p class="result-text reveal reveal_right">
         После положительного заключения экспертизы проект переходит на стадию разработки рабочей документации
       </p>
     </section>
