@@ -56,7 +56,14 @@
       <a href="tel:8800752108" class="main-footer-contact-link">8 (800) 750 21 08</a>
       <hr />
       <a href="mailto:office@geotech.expert" class="main-footer-contact-link">office@geotech.expert</a>
-      <a href="../assets/documents/privacy-policy.pdf" class="main-footer-policy-link font-breadcrumb" target="_blank">Политика конфиденциальности</a>
+      <a
+          href="/documents/privacy-policy.pdf"
+          class="main-footer-policy-link font-breadcrumb"
+          target="_blank"
+          rel="noopener noreferrer"
+      >
+        Политика конфиденциальности
+      </a>
     </footer>
   </div>
 </template>
