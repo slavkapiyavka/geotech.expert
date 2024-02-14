@@ -8,7 +8,7 @@
     background-repeat: no-repeat;
     background-position: center;
     z-index: 10000;
-    outline: 1px solid var(--dark-blue);
+    outline: 1px solid var(--white);
     border-radius: 32px;
     transition: width 125ms, height 125ms, border-radius 125ms;
     mix-blend-mode: difference;

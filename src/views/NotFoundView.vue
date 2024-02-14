@@ -34,6 +34,10 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.cursor {
+  outline: 1px solid var(--dark-blue);
+}
+
 .not-found-page {
   display: grid;
   padding-top: 114px;
