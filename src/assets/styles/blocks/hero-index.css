@@ -37,7 +37,7 @@
 }
 
 .hero.index .hero__subtitle {
-    max-width: 306px;
+    max-width: 32ch;
     margin-bottom: 40px;
 }
 

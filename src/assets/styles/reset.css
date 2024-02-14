@@ -139,6 +139,10 @@ a, button {
     }
 }
 
+a {
+    color: currentColor;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,

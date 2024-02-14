@@ -526,7 +526,15 @@ onMounted(() => {
               @change="validateAgreement"
           >
           <label for="agreement" class="contact-form__label contact-form__label_checkbox">
-            Я согласен(-на) с обработкой персональных данных
+            Я согласен(-на) с обработкой
+            <a
+                href="/documents/privacy-policy.pdf"
+                class="link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              персональных данных
+            </a>
           </label>
 
           <span v-if="contactFormAgreementError" class="input-error-message">
@@ -1794,6 +1802,7 @@ onMounted(() => {
   gap: 8px;
   padding: 6px 10px 6px 6px;
   width: fit-content;
+  height: fit-content;
   background-color: var(--white-30);
   border-radius: 26px;
   margin-bottom: 40px;
