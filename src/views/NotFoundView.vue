@@ -33,7 +33,7 @@ onMounted(() => {
   </main>
 </template>
 
-<style scoped>
+<style>
 .cursor {
   outline: 1px solid var(--dark-blue);
 }
