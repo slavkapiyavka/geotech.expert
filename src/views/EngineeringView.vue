@@ -1066,5 +1066,6 @@ useVisibilityEffect('[data-splitting]');
   line-height: var(--font-text1-line-height);
   letter-spacing: var(--font-text1-letter-spacing);
   text-transform: lowercase;
+  max-width: 46ch;
 }
 </style>
